@@ -3,12 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Team - NXSYS</title>
-    <meta name="description" content="Meet the expert team at NXSYS - certified SAP consultants and technology professionals.">
+    <title>Our Team - AI-Powered SAP Experts | NXSYS</title>
+    <meta name="description" content="Meet NXSYS's world-class team: 50+ SAP certified consultants with 200+ certifications and deep AI/ML expertise.">
     <link rel="stylesheet" href="styles-new.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .team-intro {
+            padding: 80px 0;
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+        }
+
+        .leadership-team, .practice-leads {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .practice-leads {
+            background: var(--bg-lighter);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin-bottom: 60px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 48px 32px;
+            text-align: center;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            border: 2px solid transparent;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(200, 16, 46, 0.12);
+            border-color: var(--primary-color);
+        }
+
+        .team-avatar {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 24px;
+            background: linear-gradient(135deg, var(--primary-color), #ff4d6d);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .team-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 8px;
+        }
+
+        .team-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+        }
+
+        .team-bio {
+            font-size: 0.9375rem;
+            line-height: 1.7;
+            color: var(--text-medium);
+            margin-bottom: 20px;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .team-social a {
+            width: 40px;
+            height: 40px;
+            background: var(--bg-lighter);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-medium);
+            transition: all 0.3s ease;
+        }
+
+        .team-social a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .team-stats {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 48px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .certifications {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            max-width: 900px;
+            margin: 48px auto 0;
+        }
+
+        .cert-item {
+            background: linear-gradient(135deg, rgba(200, 16, 46, 0.1), rgba(255, 77, 109, 0.1));
+            padding: 20px 24px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--secondary-color);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .cert-item:hover {
+            border-color: var(--primary-color);
+            background: linear-gradient(135deg, rgba(200, 16, 46, 0.15), rgba(255, 77, 109, 0.15));
+            transform: scale(1.05);
+        }
+
+        .join-team {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .join-content h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            color: white;
+            margin-bottom: 24px;
+        }
+
+        .join-content p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .expertise-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .expertise-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary-color);
+            transform: translateY(-4px);
+        }
+
+        .expertise-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--primary-color), #ff4d6d);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .expertise-card h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .expertise-card p {
+            font-size: 0.9375rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
 </head>
 <body>
     <!-- Top Header -->
@@ -16,13 +254,12 @@
         <div class="container">
             <div class="top-header-content">
                 <div class="contact-info">
-                    <span><i class="icon-phone"></i> +971-4-5729550</span>
-                    <span><i class="icon-email"></i> info@nxsys.com</span>
+                    <span><i data-lucide="phone" style="width: 16px; height: 16px; display: inline-block; vertical-align: middle; margin-right: 6px;"></i> +971-4-5729550</span>
+                    <span><i data-lucide="mail" style="width: 16px; height: 16px; display: inline-block; vertical-align: middle; margin-right: 6px;"></i> info@nxsys.com</span>
                 </div>
                 <div class="social-links">
-                    <a href="#" aria-label="LinkedIn"><i class="icon-linkedin"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="icon-twitter"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="icon-facebook"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" style="width: 18px; height: 18px;"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter" style="width: 18px; height: 18px;"></i></a>
                 </div>
             </div>
         </div>
@@ -99,7 +336,7 @@
     <section class="page-header">
         <div class="container">
             <h1>Our Team</h1>
-            <p>Meet the experts driving your success</p>
+            <p>World-Class SAP Experts with AI/ML Capabilities</p>
         </div>
     </section>
 
@@ -107,8 +344,42 @@
     <section class="team-intro">
         <div class="container">
             <div class="section-header">
-                <h2>Expert SAP Professionals</h2>
-                <p>Our team brings together decades of combined experience in SAP implementation, consulting, and digital transformation</p>
+                <h2>AI-Powered SAP Consulting Team</h2>
+                <p style="max-width: 800px; margin: 0 auto;">Our team combines deep SAP expertise with cutting-edge AI/ML capabilities. With 50+ certified consultants holding 200+ certifications, we bring rare expertise in both traditional SAP and modern AI technologies.</p>
+            </div>
+
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i data-lucide="graduation-cap" style="width: 32px; height: 32px;"></i>
+                    </div>
+                    <h4>Deep SAP Expertise</h4>
+                    <p>200+ certifications across all SAP modules including S/4HANA, SuccessFactors, BTP, and Analytics</p>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i data-lucide="cpu" style="width: 32px; height: 32px;"></i>
+                    </div>
+                    <h4>AI/ML Capabilities</h4>
+                    <p>Dedicated AI engineering team with expertise in LLMs, RAG, predictive analytics, and machine learning</p>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i data-lucide="briefcase" style="width: 32px; height: 32px;"></i>
+                    </div>
+                    <h4>Industry Experience</h4>
+                    <p>15+ years average experience with successful implementations across 12 industry verticals</p>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i data-lucide="globe" style="width: 32px; height: 32px;"></i>
+                    </div>
+                    <h4>Regional Expertise</h4>
+                    <p>Deep understanding of UAE and GCC market requirements, compliance, and business practices</p>
+                </div>
             </div>
         </div>
     </section>
@@ -119,30 +390,38 @@
             <h2 class="section-title">Leadership Team</h2>
             <div class="team-grid">
                 <div class="team-card">
-                    <div class="team-avatar">👔</div>
+                    <div class="team-avatar">
+                        <i data-lucide="user-circle" style="width: 48px; height: 48px;"></i>
+                    </div>
                     <h3>Chief Executive Officer</h3>
                     <p class="team-title">CEO & Founder</p>
-                    <p class="team-bio">Visionary leader with 20+ years of experience in SAP consulting and enterprise solutions across the Middle East.</p>
+                    <p class="team-bio">Visionary leader with 20+ years of experience in SAP consulting and enterprise solutions. Driving NXSYS's AI-first transformation across the Middle East.</p>
                     <div class="team-social">
-                        <a href="#"><i class="icon-linkedin"></i></a>
+                        <a href="#"><i data-lucide="linkedin" style="width: 20px; height: 20px;"></i></a>
                     </div>
                 </div>
+
                 <div class="team-card">
-                    <div class="team-avatar">💼</div>
+                    <div class="team-avatar">
+                        <i data-lucide="code-2" style="width: 48px; height: 48px;"></i>
+                    </div>
                     <h3>Chief Technology Officer</h3>
                     <p class="team-title">CTO</p>
-                    <p class="team-bio">Technology expert specializing in SAP S/4HANA, cloud migrations, and digital transformation strategies.</p>
+                    <p class="team-bio">Technology expert specializing in SAP S/4HANA, AI/ML platforms, cloud migrations, and building proprietary AI engines for SAP consulting.</p>
                     <div class="team-social">
-                        <a href="#"><i class="icon-linkedin"></i></a>
+                        <a href="#"><i data-lucide="linkedin" style="width: 20px; height: 20px;"></i></a>
                     </div>
                 </div>
+
                 <div class="team-card">
-                    <div class="team-avatar">📊</div>
+                    <div class="team-avatar">
+                        <i data-lucide="bar-chart-3" style="width: 48px; height: 48px;"></i>
+                    </div>
                     <h3>Chief Operating Officer</h3>
                     <p class="team-title">COO</p>
-                    <p class="team-bio">Operations leader ensuring excellence in project delivery and client satisfaction across all engagements.</p>
+                    <p class="team-bio">Operations leader ensuring excellence in AI-accelerated project delivery and client satisfaction across all SAP engagements and implementations.</p>
                     <div class="team-social">
-                        <a href="#"><i class="icon-linkedin"></i></a>
+                        <a href="#"><i data-lucide="linkedin" style="width: 20px; height: 20px;"></i></a>
                     </div>
                 </div>
             </div>
@@ -155,40 +434,57 @@
             <h2 class="section-title">Practice Leads</h2>
             <div class="team-grid">
                 <div class="team-card">
-                    <div class="team-avatar">🎯</div>
+                    <div class="team-avatar">
+                        <i data-lucide="database" style="width: 48px; height: 48px;"></i>
+                    </div>
                     <h3>SAP S/4HANA Practice Lead</h3>
                     <p class="team-title">Principal Consultant</p>
-                    <p class="team-bio">Certified SAP S/4HANA expert with 15+ successful migration projects across various industries.</p>
+                    <p class="team-bio">Certified SAP S/4HANA expert leading UJ-AI™ development with 15+ successful migration projects across various industries.</p>
                 </div>
+
                 <div class="team-card">
-                    <div class="team-avatar">👥</div>
+                    <div class="team-avatar">
+                        <i data-lucide="users-2" style="width: 48px; height: 48px;"></i>
+                    </div>
                     <h3>SuccessFactors Practice Lead</h3>
                     <p class="team-title">HR Transformation Expert</p>
-                    <p class="team-bio">Specializing in SAP SuccessFactors implementations and HR digital transformation initiatives.</p>
+                    <p class="team-bio">Specializing in SAP SuccessFactors implementations and AI-powered HR digital transformation initiatives.</p>
                 </div>
+
                 <div class="team-card">
-                    <div class="team-avatar">📈</div>
+                    <div class="team-avatar">
+                        <i data-lucide="brain" style="width: 48px; height: 48px;"></i>
+                    </div>
+                    <h3>AI/ML Practice Lead</h3>
+                    <p class="team-title">AI Engineering Expert</p>
+                    <p class="team-bio">Leading development of NXSYS's 5 proprietary AI platforms including Discovery Engine™, RAG Knowledge Hub™, and PM-AI™.</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <i data-lucide="trending-up" style="width: 48px; height: 48px;"></i>
+                    </div>
                     <h3>Analytics & BI Practice Lead</h3>
                     <p class="team-title">Data & Analytics Expert</p>
-                    <p class="team-bio">Expert in SAP Analytics Cloud, BW/4HANA, and advanced analytics solutions.</p>
+                    <p class="team-bio">Expert in SAP Analytics Cloud, BW/4HANA, and AI-powered advanced analytics solutions.</p>
                 </div>
+
                 <div class="team-card">
-                    <div class="team-avatar">☁️</div>
+                    <div class="team-avatar">
+                        <i data-lucide="cloud" style="width: 48px; height: 48px;"></i>
+                    </div>
                     <h3>Cloud Solutions Practice Lead</h3>
                     <p class="team-title">Cloud Architect</p>
-                    <p class="team-bio">Specializing in SAP cloud migrations, BTP, and hybrid cloud architectures.</p>
+                    <p class="team-bio">Specializing in SAP cloud migrations, BTP, hybrid cloud architectures, and SaaS platform development.</p>
                 </div>
+
                 <div class="team-card">
-                    <div class="team-avatar">🔧</div>
-                    <h3>Technical Practice Lead</h3>
-                    <p class="team-title">SAP Technical Architect</p>
-                    <p class="team-bio">Expert in SAP development, Fiori, integration technologies, and custom solutions.</p>
-                </div>
-                <div class="team-card">
-                    <div class="team-avatar">🏭</div>
-                    <h3>Manufacturing Practice Lead</h3>
-                    <p class="team-title">Industry Expert</p>
-                    <p class="team-bio">Deep expertise in SAP solutions for manufacturing, supply chain, and operations.</p>
+                    <div class="team-avatar">
+                        <i data-lucide="truck" style="width: 48px; height: 48px;"></i>
+                    </div>
+                    <h3>Supply Chain Practice Lead</h3>
+                    <p class="team-title">SCM Expert</p>
+                    <p class="team-bio">Leading AI Predictive Supply Chain Engine™ development with deep expertise in SAP SCM, MM, and demand forecasting.</p>
                 </div>
             </div>
         </div>
@@ -204,11 +500,11 @@
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">200+</div>
-                    <div class="stat-label">Certifications Held</div>
+                    <div class="stat-label">SAP Certifications</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">15+</div>
-                    <div class="stat-label">Average Years Experience</div>
+                    <div class="stat-label">Years Average Experience</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">12</div>
@@ -223,17 +519,41 @@
         <div class="container">
             <div class="section-header">
                 <h2>Our Certifications</h2>
-                <p>Our team holds extensive SAP certifications across all major modules</p>
+                <p>200+ certifications across all major SAP modules and AI/ML technologies</p>
             </div>
             <div class="cert-grid">
-                <div class="cert-item">SAP S/4HANA</div>
-                <div class="cert-item">SAP SuccessFactors</div>
-                <div class="cert-item">SAP Analytics Cloud</div>
-                <div class="cert-item">SAP Fiori</div>
-                <div class="cert-item">SAP BTP</div>
-                <div class="cert-item">SAP HANA</div>
-                <div class="cert-item">SAP MM/SD/FI</div>
-                <div class="cert-item">SAP PP/QM</div>
+                <div class="cert-item">
+                    <i data-lucide="award" style="width: 20px; height: 20px; display: inline-block; vertical-align: middle; margin-right: 8px;"></i>
+                    SAP S/4HANA
+                </div>
+                <div class="cert-item">
+                    <i data-lucide="award" style="width: 20px; height: 20px; display: inline-block; vertical-align: middle; margin-right: 8px;"></i>
+                    SAP SuccessFactors
+                </div>
+                <div class="cert-item">
+                    <i data-lucide="award" style="width: 20px; height: 20px; display: inline-block; vertical-align: middle; margin-right: 8px;"></i>
+                    SAP Analytics Cloud
+                </div>
+                <div class="cert-item">
+                    <i data-lucide="award" style="width: 20px; height: 20px; display: inline-block; vertical-align: middle; margin-right: 8px;"></i>
+                    SAP Fiori/UI5
+                </div>
+                <div class="cert-item">
+                    <i data-lucide="award" style="width: 20px; height: 20px; display: inline-block; vertical-align: middle; margin-right: 8px;"></i>
+                    SAP BTP
+                </div>
+                <div class="cert-item">
+                    <i data-lucide="award" style="width: 20px; height: 20px; display: inline-block; vertical-align: middle; margin-right: 8px;"></i>
+                    SAP HANA
+                </div>
+                <div class="cert-item">
+                    <i data-lucide="award" style="width: 20px; height: 20px; display: inline-block; vertical-align: middle; margin-right: 8px;"></i>
+                    SAP FI/CO/MM/SD
+                </div>
+                <div class="cert-item">
+                    <i data-lucide="award" style="width: 20px; height: 20px; display: inline-block; vertical-align: middle; margin-right: 8px;"></i>
+                    SAP PP/QM/PM
+                </div>
             </div>
         </div>
     </section>
@@ -242,9 +562,12 @@
     <section class="join-team">
         <div class="container">
             <div class="join-content">
-                <h2>Join Our Team</h2>
-                <p>We're always looking for talented SAP professionals to join our growing team</p>
-                <a href="contact.html" class="btn btn-primary">View Opportunities</a>
+                <h2>Join Our AI-First Team</h2>
+                <p>We're looking for talented SAP professionals and AI engineers to join our growing team and help build the future of SAP consulting</p>
+                <a href="contact.html" class="btn btn-primary" style="background: linear-gradient(135deg, var(--primary-color), #ff4d6d); padding: 20px 48px; border-radius: 50px; font-size: 1.125rem;">
+                    <i data-lucide="mail" style="width: 20px; height: 20px; display: inline-block; vertical-align: middle; margin-right: 8px;"></i>
+                    View Career Opportunities
+                </a>
             </div>
         </div>
     </section>
@@ -255,7 +578,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <img src="NXSYS Logo.png" alt="NXSYS Logo" class="footer-logo">
-                    <p>Your trusted SAP Systems Integrator in UAE, driving digital transformation and business excellence.</p>
+                    <p>AI-First SAP Systems Integrator in UAE, revolutionizing enterprise solutions with proprietary AI platforms.</p>
                 </div>
                 <div class="footer-column">
                     <h4>Services</h4>
@@ -268,12 +591,13 @@
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4>Solutions</h4>
+                    <h4>AI Platforms</h4>
                     <ul>
-                        <li><a href="solutions-digital.html">Digital Transformation</a></li>
-                        <li><a href="solutions-cloud.html">Cloud Solutions</a></li>
-                        <li><a href="solutions-analytics.html">Analytics & BI</a></li>
-                        <li><a href="solutions-custom.html">Custom Development</a></li>
+                        <li><a href="ai-innovation-investor.html#discovery">Discovery Engine™</a></li>
+                        <li><a href="ai-innovation-investor.html#uj-ai">UJ-AI™</a></li>
+                        <li><a href="ai-innovation-investor.html#rag">RAG Knowledge Hub™</a></li>
+                        <li><a href="ai-innovation-investor.html#supply-chain">Predictive Supply Chain™</a></li>
+                        <li><a href="ai-innovation-investor.html#pm-ai">PM-AI™</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -281,25 +605,25 @@
                     <ul>
                         <li><a href="about-company.html">About Us</a></li>
                         <li><a href="about-team.html">Our Team</a></li>
-                        <li><a href="about-clients.html">Clients</a></li>
-                        <li><a href="case-studies.html">Case Studies</a></li>
                         <li><a href="contact.html">Contact</a></li>
+                        <li><a href="ai-innovation-investor.html">Investment Opportunity</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 NXSYS. All rights reserved.</p>
                 <div class="footer-social">
-                    <a href="#" aria-label="LinkedIn"><i class="icon-linkedin"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="icon-twitter"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="icon-facebook"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>lucide.createIcons();</script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
 </body>
 </html>
