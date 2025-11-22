@@ -9,6 +9,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .success-message {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .error-message {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+    </style>
 </head>
 <body>
     <!-- Top Header -->
@@ -145,7 +161,11 @@
 
                 <div class="contact-form">
                     <h3 style="margin-bottom: 20px; color: var(--secondary-color);">Send Us a Message</h3>
-                    <form id="contactForm">
+
+                    <!-- Status Message -->
+                    <div id="formStatus" style="display: none; padding: 16px; border-radius: 8px; margin-bottom: 20px; text-align: center; font-weight: 600;"></div>
+
+                    <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                         <div class="form-group">
                             <input type="text" name="name" placeholder="Your Name *" required>
                         </div>
@@ -161,33 +181,43 @@
                         <div class="form-group">
                             <select name="service" required>
                                 <option value="">Select Service of Interest *</option>
-                                <option value="consulting">SAP Consulting</option>
-                                <option value="implementation">SAP Implementation</option>
-                                <option value="s4hana">SAP S/4HANA</option>
-                                <option value="successfactors">SuccessFactors</option>
-                                <option value="support">SAP Support & Managed Services</option>
-                                <option value="digital">Digital Transformation</option>
-                                <option value="cloud">Cloud Solutions</option>
-                                <option value="analytics">Analytics & BI</option>
-                                <option value="custom">Custom Development</option>
-                                <option value="other">Other</option>
+                                <option value="SAP Consulting">SAP Consulting</option>
+                                <option value="SAP Implementation">SAP Implementation</option>
+                                <option value="SAP S/4HANA">SAP S/4HANA</option>
+                                <option value="SuccessFactors">SuccessFactors</option>
+                                <option value="SAP Support & Managed Services">SAP Support & Managed Services</option>
+                                <option value="Digital Transformation">Digital Transformation</option>
+                                <option value="Cloud Solutions">Cloud Solutions</option>
+                                <option value="Analytics & BI">Analytics & BI</option>
+                                <option value="Custom Development">Custom Development</option>
+                                <option value="Other">Other</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <select name="industry">
                                 <option value="">Select Your Industry</option>
-                                <option value="manufacturing">Manufacturing</option>
-                                <option value="retail">Retail</option>
-                                <option value="healthcare">Healthcare</option>
-                                <option value="finance">Finance & Banking</option>
-                                <option value="energy">Energy & Utilities</option>
-                                <option value="other">Other</option>
+                                <option value="Manufacturing">Manufacturing</option>
+                                <option value="Retail">Retail</option>
+                                <option value="Healthcare">Healthcare</option>
+                                <option value="Finance & Banking">Finance & Banking</option>
+                                <option value="Energy & Utilities">Energy & Utilities</option>
+                                <option value="Other">Other</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <textarea name="message" rows="5" placeholder="Tell us about your project or requirements *" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+
+                        <!-- Honeypot field for spam protection -->
+                        <input type="text" name="_gotcha" style="display:none">
+
+                        <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%;">
+                            <span id="btnText">Send Message</span>
+                            <span id="btnLoader" style="display: none;">
+                                <i data-lucide="loader" style="width: 20px; height: 20px; display: inline-block; vertical-align: middle; animation: spin 1s linear infinite;"></i>
+                                Sending...
+                            </span>
+                        </button>
                     </form>
                 </div>
             </div>

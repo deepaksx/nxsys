@@ -94,48 +94,78 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form Handling
+// Formspree Contact Form Handling
 const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
+const submitBtn = document.getElementById('submitBtn');
+const btnText = document.getElementById('btnText');
+const btnLoader = document.getElementById('btnLoader');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
 
-        // Get form values
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const service = document.getElementById('service').value;
-        const message = document.getElementById('message').value;
-
-        // Basic validation
-        if (!name || !email || !message || !service) {
-            alert('Please fill in all required fields.');
-            return;
+        // Show loading state
+        if (btnText && btnLoader && submitBtn) {
+            btnText.style.display = 'none';
+            btnLoader.style.display = 'inline-block';
+            submitBtn.disabled = true;
         }
 
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            alert('Please enter a valid email address.');
-            return;
+        // Hide previous status messages
+        if (formStatus) {
+            formStatus.style.display = 'none';
         }
 
-        // Here you would typically send the form data to a server
-        // For now, we'll just show a success message
+        // Get form data
+        const formData = new FormData(contactForm);
 
-        console.log('Form Data:', {
-            name,
-            email,
-            phone,
-            service,
-            message
-        });
+        try {
+            // Submit to Formspree
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
 
-        alert('Thank you for your message! We will get back to you soon.');
+            if (response.ok) {
+                // Success - show success message
+                if (formStatus) {
+                    formStatus.textContent = '✓ Thank you for your message! We will get back to you within 24 hours.';
+                    formStatus.className = 'success-message';
+                    formStatus.style.display = 'block';
+                }
 
-        // Reset form
-        contactForm.reset();
+                // Reset form
+                contactForm.reset();
+
+                // Scroll to status message
+                if (formStatus) {
+                    formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            } else {
+                // Error response from Formspree
+                const data = await response.json();
+                throw new Error(data.error || 'Form submission failed');
+            }
+        } catch (error) {
+            // Error - show error message
+            if (formStatus) {
+                formStatus.textContent = '✗ Sorry, there was an error sending your message. Please try again or email us directly at info@nxsys.com';
+                formStatus.className = 'error-message';
+                formStatus.style.display = 'block';
+            }
+            console.error('Form submission error:', error);
+        } finally {
+            // Reset button state
+            if (btnText && btnLoader && submitBtn) {
+                btnText.style.display = 'inline-block';
+                btnLoader.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        }
     });
 }
 
