@@ -3,12 +3,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NXSYS - SAP Systems Integrator | Towards Your Next Success</title>
-    <meta name="description" content="NXSYS is a premier SAP Systems Integrator in UAE, providing world-class SAP consulting, implementation, and digital transformation services.">
+    <title>NXSYS - AI-Powered SAP Consulting | UAE's Leading AI-First Systems Integrator</title>
+    <meta name="description" content="NXSYS is UAE's first AI-powered SAP Systems Integrator with 5 proprietary AI platforms revolutionizing SAP consulting and implementations.">
     <link rel="stylesheet" href="styles-new.css">
+    <link rel="stylesheet" href="parallax-effects.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Enhanced Homepage Styles with Parallax */
+        .hero-parallax {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: #000000;
+        }
+
+        .hero-parallax-bg {
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            width: 120%;
+            height: 120%;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            z-index: 0;
+        }
+
+        .hero-content-parallax {
+            position: relative;
+            z-index: 10;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary-color), #ff4d6d);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 32px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .hero-main-title {
+            font-size: clamp(3.5rem, 8vw, 6.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            animation: fadeInUp 1s ease;
+            color: #ffffff;
+        }
+
+        .hero-gradient-text {
+            background: linear-gradient(90deg, #ff4d6d, #C8102E, #ff8fa3);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s linear infinite;
+        }
+
+        .hero-desc {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 48px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1.2s ease;
+            font-weight: 500;
+        }
+
+        .hero-cta-buttons {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1.4s ease;
+        }
+
+        .btn-hero-primary {
+            background: linear-gradient(135deg, var(--primary-color), #ff4d6d);
+            color: white;
+            padding: 20px 48px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.125rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(200, 16, 46, 0.4);
+        }
+
+        .btn-hero-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 60px rgba(200, 16, 46, 0.6);
+        }
+
+        .btn-hero-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            color: white;
+            padding: 20px 48px;
+            border-radius: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            font-weight: 700;
+            font-size: 1.125rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-hero-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--primary-color);
+            transform: translateY(-4px);
+        }
+
+        /* Stats Section with Parallax */
+        .stats-parallax {
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 48px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-card-parallax {
+            text-align: center;
+            padding: 48px 32px;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+        }
+
+        .stat-card-parallax:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 60px rgba(200, 16, 46, 0.15);
+            border-color: var(--primary-color);
+        }
+
+        .stat-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            background: linear-gradient(135deg, var(--primary-color), #ff4d6d);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-color), #ff4d6d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        /* Services with 3D Tilt */
+        .services-parallax {
+            padding: 120px 0;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card-3d {
+            background: white;
+            border-radius: 24px;
+            padding: 48px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            transform-style: preserve-3d;
+        }
+
+        .service-card-3d:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 20px 80px rgba(200, 16, 46, 0.15);
+        }
+
+        .service-icon-modern {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(200, 16, 46, 0.1), rgba(255, 77, 109, 0.1));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: var(--primary-color);
+        }
+
+        /* Industries Grid with Hover Effects */
+        .industries-parallax {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            color: white;
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .industry-card-modern {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .industry-card-modern:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary-color);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(200, 16, 46, 0.3);
+        }
+
+        .industry-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* CTA Section with Animated Background */
+        .cta-parallax {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-header-centered {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-medium);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Top Header -->
@@ -16,13 +317,12 @@
         <div class="container">
             <div class="top-header-content">
                 <div class="contact-info">
-                    <span><i class="icon-phone"></i> +971-4-5729550</span>
-                    <span><i class="icon-email"></i> info@nxsys.com</span>
+                    <span><i data-lucide="phone" style="width: 16px; height: 16px; display: inline-block; vertical-align: middle; margin-right: 6px;"></i> +971-4-5729550</span>
+                    <span><i data-lucide="mail" style="width: 16px; height: 16px; display: inline-block; vertical-align: middle; margin-right: 6px;"></i> info@nxsys.com</span>
                 </div>
                 <div class="social-links">
-                    <a href="#" aria-label="LinkedIn"><i class="icon-linkedin"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="icon-twitter"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="icon-facebook"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" style="width: 18px; height: 18px;"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter" style="width: 18px; height: 18px;"></i></a>
                 </div>
             </div>
         </div>
@@ -47,11 +347,12 @@
                         <ul class="dropdown-menu">
                             <li><a href="about-company.html">Company</a></li>
                             <li><a href="about-team.html">Our Team</a></li>
-                            <li><a href="about-clients.html">Clients</a></li>
-                            <li><a href="about-partners.html">Partners</a></li>
                         </ul>
                     </li>
-                    <li><a href="ai-innovation.html" style="color: var(--primary-color); font-weight: 600;">🤖 AI Innovation</a></li>
+                    <li><a href="ai-innovation-investor.html" style="color: var(--primary-color); font-weight: 600;">
+                        <i data-lucide="sparkles" style="width: 18px; height: 18px; display: inline-block; vertical-align: middle; margin-right: 4px;"></i>
+                        AI Innovation
+                    </a></li>
                     <li class="dropdown">
                         <a href="services-consulting.html">Services</a>
                         <ul class="dropdown-menu">
@@ -88,366 +389,338 @@
                             <li><a href="industry-pharmaceuticals.html">Pharmaceuticals</a></li>
                         </ul>
                     </li>
-                    <li><a href="case-studies.html">Case Studies</a></li>
                     <li><a href="contact.html" class="btn-contact">Contact Us</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-overlay"></div>
+    <!-- Hero Section with Parallax -->
+    <section class="hero-parallax">
+        <!-- Parallax Background Layer -->
+        <div class="hero-parallax-bg parallax-layer" data-speed="0.5"></div>
+
+        <!-- Animated Particles -->
+        <div class="particles-container">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+
+        <!-- Data Stream Effect -->
+        <div class="data-stream">
+            <div class="data-line"></div>
+            <div class="data-line"></div>
+            <div class="data-line"></div>
+            <div class="data-line"></div>
+            <div class="data-line"></div>
+        </div>
+
+        <!-- Glowing Orbs -->
+        <div class="glow-orb glow-orb-1"></div>
+        <div class="glow-orb glow-orb-2"></div>
+        <div class="glow-orb glow-orb-3"></div>
+
+        <!-- Hero Content -->
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">AI-Powered SAP Consulting</h1>
-                <p class="hero-subtitle">Building the Future of Intelligent Enterprise Solutions in UAE</p>
-                <p class="hero-description">We are an AI-first SAP Systems Integrator, leveraging cutting-edge artificial intelligence to transform traditional consulting. Our proprietary AI engines and native AI business applications are revolutionizing SAP implementations across the Middle East.</p>
-                <div class="hero-buttons">
-                    <a href="services-consulting.html" class="btn btn-primary">Explore Services</a>
-                    <a href="contact.html" class="btn btn-secondary">Get Started</a>
+            <div class="hero-content-parallax">
+                <div class="hero-badge">
+                    <i data-lucide="zap" style="width: 16px; height: 16px; display: inline-block; vertical-align: middle; margin-right: 8px;"></i>
+                    UAE'S FIRST AI-POWERED SAP INTEGRATOR
+                </div>
+
+                <h1 class="hero-main-title" style="color: #ffffff;">
+                    Revolutionizing SAP with<br/>
+                    <span class="hero-gradient-text">Artificial Intelligence</span>
+                </h1>
+
+                <p class="hero-desc">
+                    5 Proprietary AI Platforms • 70% Faster Implementations • 50+ Certified Consultants
+                </p>
+
+                <div class="hero-cta-buttons">
+                    <a href="ai-innovation-investor.html" class="btn-hero-primary magnetic-btn">
+                        <i data-lucide="rocket" style="width: 24px; height: 24px;"></i>
+                        Discover Our AI Platforms
+                    </a>
+                    <a href="contact.html" class="btn-hero-secondary">
+                        <i data-lucide="calendar" style="width: 24px; height: 24px;"></i>
+                        Schedule Consultation
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Overview -->
-    <section class="services-overview" id="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Services</h2>
-                <p>Comprehensive SAP solutions tailored to your business needs</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="icon-consulting"></i>
-                    </div>
-                    <h3>SAP Consulting</h3>
-                    <p>Strategic SAP advisory services to optimize your business processes and maximize ROI on your SAP investments.</p>
-                    <a href="services-consulting.html" class="learn-more">Learn More →</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="icon-implementation"></i>
-                    </div>
-                    <h3>SAP Implementation</h3>
-                    <p>End-to-end SAP implementation services including S/4HANA, SuccessFactors, and industry-specific solutions.</p>
-                    <a href="services-implementation.html" class="learn-more">Learn More →</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="icon-digital"></i>
-                    </div>
-                    <h3>Digital Transformation</h3>
-                    <p>Transform your business with cutting-edge technologies including AI, IoT, and cloud-based innovations.</p>
-                    <a href="solutions-digital.html" class="learn-more">Learn More →</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="icon-support"></i>
-                    </div>
-                    <h3>Managed Services</h3>
-                    <p>24/7 SAP support and application management services to ensure seamless business operations.</p>
-                    <a href="services-support.html" class="learn-more">Learn More →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section class="why-choose-us">
-        <div class="container">
-            <div class="section-header">
-                <h2>Why Choose NXSYS</h2>
-                <p>Your trusted SAP partner in the UAE</p>
-            </div>
-            <div class="why-grid">
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="icon-expertise"></i>
-                    </div>
-                    <h3>Expert Team</h3>
-                    <p>Certified SAP consultants with extensive industry experience and deep technical expertise.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="icon-quality"></i>
-                    </div>
-                    <h3>Quality Assurance</h3>
-                    <p>Rigorous quality standards and best practices ensuring successful project delivery.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="icon-delivery"></i>
-                    </div>
-                    <h3>On-Time Delivery</h3>
-                    <p>Proven track record of delivering projects on time and within budget.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">
-                        <i class="icon-support-247"></i>
-                    </div>
-                    <h3>24/7 Support</h3>
-                    <p>Round-the-clock support to keep your systems running smoothly.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Industries Section -->
-    <section class="industries" id="industries">
-        <div class="container">
-            <div class="section-header">
-                <h2>Industries We Serve</h2>
-                <p>Domain expertise across multiple sectors</p>
-            </div>
-            <div class="industries-grid">
-                <a href="industry-manufacturing.html" class="industry-card">
-                    <div class="industry-icon">⚙️</div>
-                    <h4>Manufacturing</h4>
-                </a>
-                <a href="industry-retail.html" class="industry-card">
-                    <div class="industry-icon">🛒</div>
-                    <h4>Retail</h4>
-                </a>
-                <a href="industry-healthcare.html" class="industry-card">
-                    <div class="industry-icon">🏥</div>
-                    <h4>Healthcare</h4>
-                </a>
-                <a href="industry-finance.html" class="industry-card">
-                    <div class="industry-icon">🏦</div>
-                    <h4>Banking & Finance</h4>
-                </a>
-                <a href="industry-energy.html" class="industry-card">
-                    <div class="industry-icon">⚡</div>
-                    <h4>Energy & Utilities</h4>
-                </a>
-                <a href="industry-fbb.html" class="industry-card">
-                    <div class="industry-icon">🍽️</div>
-                    <h4>F&B</h4>
-                </a>
-                <a href="industry-construction.html" class="industry-card">
-                    <div class="industry-icon">🏗️</div>
-                    <h4>Construction</h4>
-                </a>
-                <a href="industry-logistics.html" class="industry-card">
-                    <div class="industry-icon">📦</div>
-                    <h4>Logistics</h4>
-                </a>
-                <a href="industry-education.html" class="industry-card">
-                    <div class="industry-icon">🎓</div>
-                    <h4>Education</h4>
-                </a>
-                <a href="industry-hospitality.html" class="industry-card">
-                    <div class="industry-icon">🏨</div>
-                    <h4>Hospitality</h4>
-                </a>
-                <a href="industry-automotive.html" class="industry-card">
-                    <div class="industry-icon">🚗</div>
-                    <h4>Automotive</h4>
-                </a>
-                <a href="industry-pharmaceuticals.html" class="industry-card">
-                    <div class="industry-icon">💊</div>
-                    <h4>Pharmaceuticals</h4>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats">
+    <!-- Stats Section with Parallax -->
+    <section class="stats-parallax parallax-section">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">50+</div>
+                <div class="stat-card-parallax reveal-scale delay-100">
+                    <div class="stat-icon">
+                        <i data-lucide="cpu" style="width: 40px; height: 40px;"></i>
+                    </div>
+                    <div class="stat-number" data-count="5">5</div>
+                    <div class="stat-label">AI Platforms</div>
+                </div>
+
+                <div class="stat-card-parallax reveal-scale delay-200">
+                    <div class="stat-icon">
+                        <i data-lucide="users" style="width: 40px; height: 40px;"></i>
+                    </div>
+                    <div class="stat-number" data-count="50">50+</div>
                     <div class="stat-label">SAP Certified Consultants</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">200+</div>
+
+                <div class="stat-card-parallax reveal-scale delay-300">
+                    <div class="stat-icon">
+                        <i data-lucide="award" style="width: 40px; height: 40px;"></i>
+                    </div>
+                    <div class="stat-number" data-count="200">200+</div>
                     <div class="stat-label">SAP Certifications</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Years of Expertise</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">12</div>
+
+                <div class="stat-card-parallax reveal-scale delay-400">
+                    <div class="stat-icon">
+                        <i data-lucide="building-2" style="width: 40px; height: 40px;"></i>
+                    </div>
+                    <div class="stat-number" data-count="12">12</div>
                     <div class="stat-label">Industry Verticals</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SAP Solutions -->
-    <section class="sap-solutions">
+    <!-- Services Section with 3D Tilt -->
+    <section class="services-parallax grid-bg">
         <div class="container">
-            <div class="section-header">
-                <h2>SAP Solutions</h2>
-                <p>Comprehensive SAP portfolio for enterprise transformation</p>
+            <div class="section-header-centered">
+                <h2 class="section-title">
+                    Our <span class="gradient-text">Services</span>
+                </h2>
+                <p class="section-subtitle">
+                    AI-accelerated SAP solutions delivering 70% faster implementations
+                </p>
             </div>
-            <div class="solutions-grid">
-                <div class="solution-card">
-                    <h3>SAP S/4HANA</h3>
-                    <p>Move to the intelligent ERP with our proven S/4HANA migration and implementation services.</p>
-                    <ul>
-                        <li>Greenfield Implementation</li>
-                        <li>Brownfield Migration</li>
-                        <li>Bluefield Approach</li>
-                        <li>Custom Add-ons</li>
-                    </ul>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+                <div class="service-card-3d tilt-card reveal-fade-up delay-100">
+                    <div class="service-icon-modern">
+                        <i data-lucide="lightbulb" style="width: 40px; height: 40px;"></i>
+                    </div>
+                    <h3 style="font-size: 1.75rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 16px;">AI-Powered SAP Consulting</h3>
+                    <p style="color: var(--text-medium); line-height: 1.8; margin-bottom: 24px;">Strategic advisory powered by our AI Discovery Engine™ for instant landscape analysis and optimization recommendations.</p>
+                    <a href="services-consulting.html" style="color: var(--primary-color); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                        Learn More <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+                    </a>
                 </div>
-                <div class="solution-card">
-                    <h3>SAP SuccessFactors</h3>
-                    <p>Transform your HR processes with cloud-based human capital management solutions.</p>
-                    <ul>
-                        <li>Employee Central</li>
-                        <li>Recruiting</li>
-                        <li>Performance & Goals</li>
-                        <li>Learning Management</li>
-                    </ul>
+
+                <div class="service-card-3d tilt-card reveal-fade-up delay-200">
+                    <div class="service-icon-modern">
+                        <i data-lucide="code-2" style="width: 40px; height: 40px;"></i>
+                    </div>
+                    <h3 style="font-size: 1.75rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 16px;">SAP S/4HANA Migration</h3>
+                    <p style="color: var(--text-medium); line-height: 1.8; margin-bottom: 24px;">AI-accelerated migrations using UJ-AI™ for 90% reduction in posting errors and automated testing.</p>
+                    <a href="services-s4hana.html" style="color: var(--primary-color); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                        Learn More <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+                    </a>
                 </div>
-                <div class="solution-card">
-                    <h3>SAP Analytics Cloud</h3>
-                    <p>Make data-driven decisions with powerful business intelligence and planning capabilities.</p>
-                    <ul>
-                        <li>Business Intelligence</li>
-                        <li>Planning & Forecasting</li>
-                        <li>Predictive Analytics</li>
-                        <li>Custom Dashboards</li>
-                    </ul>
+
+                <div class="service-card-3d tilt-card reveal-fade-up delay-300">
+                    <div class="service-icon-modern">
+                        <i data-lucide="brain" style="width: 40px; height: 40px;"></i>
+                    </div>
+                    <h3 style="font-size: 1.75rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 16px;">AI RAG Knowledge Hub™</h3>
+                    <p style="color: var(--text-medium); line-height: 1.8; margin-bottom: 24px;">Instant access to SAP best practices and implementation knowledge with 95%+ accuracy through AI-powered search.</p>
+                    <a href="ai-innovation-investor.html#rag" style="color: var(--primary-color); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                        Learn More <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+                    </a>
                 </div>
-                <div class="solution-card">
-                    <h3>SAP Fiori</h3>
-                    <p>Enhance user experience with modern, responsive SAP Fiori applications.</p>
-                    <ul>
-                        <li>Fiori Implementation</li>
-                        <li>Custom App Development</li>
-                        <li>UX Optimization</li>
-                        <li>Mobile Enablement</li>
-                    </ul>
+
+                <div class="service-card-3d tilt-card reveal-fade-up delay-400">
+                    <div class="service-icon-modern">
+                        <i data-lucide="truck" style="width: 40px; height: 40px;"></i>
+                    </div>
+                    <h3 style="font-size: 1.75rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 16px;">Predictive Supply Chain</h3>
+                    <p style="color: var(--text-medium); line-height: 1.8; margin-bottom: 24px;">AI-powered demand forecasting and inventory optimization reducing stockouts by 40%.</p>
+                    <a href="ai-innovation-investor.html#supply-chain" style="color: var(--primary-color); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                        Learn More <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+                    </a>
+                </div>
+
+                <div class="service-card-3d tilt-card reveal-fade-up delay-500">
+                    <div class="service-icon-modern">
+                        <i data-lucide="gantt-chart" style="width: 40px; height: 40px;"></i>
+                    </div>
+                    <h3 style="font-size: 1.75rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 16px;">AI Project Manager (PM-AI™)</h3>
+                    <p style="color: var(--text-medium); line-height: 1.8; margin-bottom: 24px;">Intelligent project automation delivering 70% faster planning and real-time risk detection.</p>
+                    <a href="ai-innovation-investor.html#pm-ai" style="color: var(--primary-color); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                        Learn More <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+                    </a>
+                </div>
+
+                <div class="service-card-3d tilt-card reveal-fade-up delay-600">
+                    <div class="service-icon-modern">
+                        <i data-lucide="headphones" style="width: 40px; height: 40px;"></i>
+                    </div>
+                    <h3 style="font-size: 1.75rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 16px;">24/7 AI-Powered Support</h3>
+                    <p style="color: var(--text-medium); line-height: 1.8; margin-bottom: 24px;">Managed services with AI-powered monitoring and predictive issue resolution.</p>
+                    <a href="services-support.html" style="color: var(--primary-color); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                        Learn More <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Case Studies Preview -->
-    <section class="case-studies" id="case-studies">
-        <div class="container">
-            <div class="section-header">
-                <h2>Success Stories</h2>
-                <p>Delivering value across industries</p>
+    <!-- Industries Section with Dark Parallax -->
+    <section class="industries-parallax ai-network-bg">
+        <div class="particles-container">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+
+        <div class="container" style="position: relative; z-index: 10;">
+            <div class="section-header-centered">
+                <h2 class="section-title neon-text">
+                    12 Industry <span style="color: var(--primary-color);">Verticals</span>
+                </h2>
+                <p style="font-size: 1.25rem; color: rgba(255, 255, 255, 0.8); max-width: 700px; margin: 0 auto;">
+                    Deep SAP expertise across manufacturing, retail, healthcare, finance, and more
+                </p>
             </div>
-            <div class="case-studies-grid">
-                <div class="case-study-card">
-                    <div class="case-study-image">
-                        <div class="placeholder-image">Manufacturing</div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px;">
+                <a href="industry-manufacturing.html" class="industry-card-modern reveal-scale delay-100" style="text-decoration: none; color: white;">
+                    <div class="industry-icon">
+                        <i data-lucide="factory" style="width: 56px; height: 56px;"></i>
                     </div>
-                    <div class="case-study-content">
-                        <h3>Leading Manufacturing Company</h3>
-                        <p>Successful SAP S/4HANA implementation reducing operational costs by 30% and improving efficiency.</p>
-                        <a href="case-studies.html" class="read-more">Read Case Study →</a>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Manufacturing</h3>
+                    <p style="font-size: 0.9375rem; opacity: 0.8;">Smart factory solutions</p>
+                </a>
+
+                <a href="industry-retail.html" class="industry-card-modern reveal-scale delay-200" style="text-decoration: none; color: white;">
+                    <div class="industry-icon">
+                        <i data-lucide="shopping-cart" style="width: 56px; height: 56px;"></i>
                     </div>
-                </div>
-                <div class="case-study-card">
-                    <div class="case-study-image">
-                        <div class="placeholder-image">Retail</div>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Retail</h3>
+                    <p style="font-size: 0.9375rem; opacity: 0.8;">Omnichannel experiences</p>
+                </a>
+
+                <a href="industry-healthcare.html" class="industry-card-modern reveal-scale delay-300" style="text-decoration: none; color: white;">
+                    <div class="industry-icon">
+                        <i data-lucide="heart-pulse" style="width: 56px; height: 56px;"></i>
                     </div>
-                    <div class="case-study-content">
-                        <h3>Retail Chain Transformation</h3>
-                        <p>Implemented integrated SAP solution improving inventory management and customer experience.</p>
-                        <a href="case-studies.html" class="read-more">Read Case Study →</a>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Healthcare</h3>
+                    <p style="font-size: 0.9375rem; opacity: 0.8;">Patient-centric care</p>
+                </a>
+
+                <a href="industry-finance.html" class="industry-card-modern reveal-scale delay-400" style="text-decoration: none; color: white;">
+                    <div class="industry-icon">
+                        <i data-lucide="banknote" style="width: 56px; height: 56px;"></i>
                     </div>
-                </div>
-                <div class="case-study-card">
-                    <div class="case-study-image">
-                        <div class="placeholder-image">Energy</div>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Banking & Finance</h3>
+                    <p style="font-size: 0.9375rem; opacity: 0.8;">Digital banking</p>
+                </a>
+
+                <a href="industry-energy.html" class="industry-card-modern reveal-scale delay-500" style="text-decoration: none; color: white;">
+                    <div class="industry-icon">
+                        <i data-lucide="zap" style="width: 56px; height: 56px;"></i>
                     </div>
-                    <div class="case-study-content">
-                        <h3>Energy Sector Digital Transformation</h3>
-                        <p>Cloud migration and SAP Analytics implementation enabling real-time insights and decision-making.</p>
-                        <a href="case-studies.html" class="read-more">Read Case Study →</a>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Energy & Utilities</h3>
+                    <p style="font-size: 0.9375rem; opacity: 0.8;">Smart grid management</p>
+                </a>
+
+                <a href="industry-fbb.html" class="industry-card-modern reveal-scale delay-600" style="text-decoration: none; color: white;">
+                    <div class="industry-icon">
+                        <i data-lucide="salad" style="width: 56px; height: 56px;"></i>
                     </div>
-                </div>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Food & Beverage</h3>
+                    <p style="font-size: 0.9375rem; opacity: 0.8;">Quality & traceability</p>
+                </a>
+
+                <a href="industry-construction.html" class="industry-card-modern reveal-scale" style="text-decoration: none; color: white;">
+                    <div class="industry-icon">
+                        <i data-lucide="hard-hat" style="width: 56px; height: 56px;"></i>
+                    </div>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Construction</h3>
+                    <p style="font-size: 0.9375rem; opacity: 0.8;">Project excellence</p>
+                </a>
+
+                <a href="industry-logistics.html" class="industry-card-modern reveal-scale" style="text-decoration: none; color: white;">
+                    <div class="industry-icon">
+                        <i data-lucide="package" style="width: 56px; height: 56px;"></i>
+                    </div>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Logistics</h3>
+                    <p style="font-size: 0.9375rem; opacity: 0.8;">Transportation optimization</p>
+                </a>
+
+                <a href="industry-education.html" class="industry-card-modern reveal-scale" style="text-decoration: none; color: white;">
+                    <div class="industry-icon">
+                        <i data-lucide="graduation-cap" style="width: 56px; height: 56px;"></i>
+                    </div>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Education</h3>
+                    <p style="font-size: 0.9375rem; opacity: 0.8;">Learning management</p>
+                </a>
+
+                <a href="industry-hospitality.html" class="industry-card-modern reveal-scale" style="text-decoration: none; color: white;">
+                    <div class="industry-icon">
+                        <i data-lucide="hotel" style="width: 56px; height: 56px;"></i>
+                    </div>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Hospitality</h3>
+                    <p style="font-size: 0.9375rem; opacity: 0.8;">Guest experiences</p>
+                </a>
+
+                <a href="industry-automotive.html" class="industry-card-modern reveal-scale" style="text-decoration: none; color: white;">
+                    <div class="industry-icon">
+                        <i data-lucide="car" style="width: 56px; height: 56px;"></i>
+                    </div>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Automotive</h3>
+                    <p style="font-size: 0.9375rem; opacity: 0.8;">Connected vehicles</p>
+                </a>
+
+                <a href="industry-pharmaceuticals.html" class="industry-card-modern reveal-scale" style="text-decoration: none; color: white;">
+                    <div class="industry-icon">
+                        <i data-lucide="pill" style="width: 56px; height: 56px;"></i>
+                    </div>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Pharmaceuticals</h3>
+                    <p style="font-size: 0.9375rem; opacity: 0.8;">Drug discovery & compliance</p>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Partners Section -->
-    <section class="partners">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Partners</h2>
-                <p>Trusted technology partnerships</p>
-            </div>
-            <div class="partners-logos">
-                <div class="partner-logo">SAP</div>
-                <div class="partner-logo">Microsoft</div>
-                <div class="partner-logo">AWS</div>
-                <div class="partner-logo">Oracle</div>
-            </div>
-        </div>
-    </section>
+    <!-- CTA Section with Parallax -->
+    <section class="cta-parallax">
+        <div class="glow-orb glow-orb-1"></div>
+        <div class="glow-orb glow-orb-2"></div>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Transform Your Business?</h2>
-                <p>Let's discuss how NXSYS can drive your next success</p>
-                <a href="contact.html" class="btn btn-primary">Get In Touch</a>
-            </div>
-        </div>
-    </section>
+        <div class="container" style="position: relative; z-index: 10; text-align: center;">
+            <h2 style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; color: white; margin-bottom: 24px; line-height: 1.2;">
+                Ready to Transform Your SAP Journey?
+            </h2>
+            <p style="font-size: 1.5rem; color: rgba(255, 255, 255, 0.95); margin-bottom: 48px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Discover how our AI platforms can accelerate your SAP implementations by 70%
+            </p>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Contact Us</h2>
-                <p>Get in touch with our team</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <h3>UAE Office</h3>
-                        <p>Dubai, United Arab Emirates</p>
-                        <p>Phone: +971-4-XXX-XXXX</p>
-                        <p>Email: info@nxsys.com</p>
-                    </div>
-                    <div class="contact-item">
-                        <h3>Business Hours</h3>
-                        <p>Sunday - Thursday: 9:00 AM - 6:00 PM</p>
-                        <p>Friday - Saturday: Closed</p>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" id="phone" placeholder="Phone Number">
-                        </div>
-                        <div class="form-group">
-                            <select id="service" required>
-                                <option value="">Select Service</option>
-                                <option value="sap-consulting">SAP Consulting</option>
-                                <option value="implementation">SAP Implementation</option>
-                                <option value="s4hana">SAP S/4HANA</option>
-                                <option value="support">Managed Services</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
+            <div style="display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.html" class="btn-hero-primary magnetic-btn" style="background: white; color: var(--primary-color);">
+                    <i data-lucide="calendar" style="width: 24px; height: 24px;"></i>
+                    Schedule Free Consultation
+                </a>
+                <a href="ai-innovation-investor.html" class="btn-hero-secondary" style="border-color: white;">
+                    <i data-lucide="play-circle" style="width: 24px; height: 24px;"></i>
+                    Watch Demo
+                </a>
             </div>
         </div>
     </section>
@@ -458,7 +731,17 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <img src="NXSYS Logo.png" alt="NXSYS Logo" class="footer-logo">
-                    <p>Your trusted SAP Systems Integrator in UAE, driving digital transformation and business excellence.</p>
+                    <p>AI-First SAP Systems Integrator in UAE, revolutionizing enterprise solutions with proprietary AI platforms.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>AI Platforms</h4>
+                    <ul>
+                        <li><a href="ai-innovation-investor.html#discovery">Discovery Engine™</a></li>
+                        <li><a href="ai-innovation-investor.html#uj-ai">UJ-AI™</a></li>
+                        <li><a href="ai-innovation-investor.html#rag">RAG Knowledge Hub™</a></li>
+                        <li><a href="ai-innovation-investor.html#supply-chain">Predictive Supply Chain™</a></li>
+                        <li><a href="ai-innovation-investor.html#pm-ai">PM-AI™</a></li>
+                    </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Services</h4>
@@ -466,17 +749,7 @@
                         <li><a href="services-consulting.html">SAP Consulting</a></li>
                         <li><a href="services-implementation.html">SAP Implementation</a></li>
                         <li><a href="services-s4hana.html">SAP S/4HANA</a></li>
-                        <li><a href="services-successfactors.html">SuccessFactors</a></li>
                         <li><a href="services-support.html">Managed Services</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Solutions</h4>
-                    <ul>
-                        <li><a href="solutions-digital.html">Digital Transformation</a></li>
-                        <li><a href="solutions-cloud.html">Cloud Solutions</a></li>
-                        <li><a href="solutions-analytics.html">Analytics & BI</a></li>
-                        <li><a href="solutions-custom.html">Custom Development</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -484,8 +757,6 @@
                     <ul>
                         <li><a href="about-company.html">About Us</a></li>
                         <li><a href="about-team.html">Our Team</a></li>
-                        <li><a href="about-clients.html">Clients</a></li>
-                        <li><a href="case-studies.html">Case Studies</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -493,14 +764,18 @@
             <div class="footer-bottom">
                 <p>&copy; 2024 NXSYS. All rights reserved.</p>
                 <div class="footer-social">
-                    <a href="#" aria-label="LinkedIn"><i class="icon-linkedin"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="icon-twitter"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="icon-facebook"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script src="parallax-engine.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
 </body>
 </html>
