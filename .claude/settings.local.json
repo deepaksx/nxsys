@@ -3,7 +3,12 @@
     "allow": [
       "Bash(dir:*)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: NXSYS SAP Systems Integrator website\n\n- 28 HTML pages including home, about, services, solutions, industries, case studies, and contact\n- Modern design with Inter font and NXSYS brand colors (crimson red and black)\n- Responsive layout with mobile-friendly navigation\n- 12 industry-specific pages with detailed SAP solutions\n- 5 service pages covering SAP consulting, implementation, S/4HANA, SuccessFactors, and support\n- 4 solution pages for digital transformation, cloud, analytics, and custom development\n- Complete navigation with working links across all pages\n- Contact information: +971-4-5729550, info@nxsys.com\n- Focus on consultant expertise and certifications rather than client claims\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(start ai-innovation.html)"
     ],
     "deny": [],
     "ask": []
