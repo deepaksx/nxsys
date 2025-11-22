@@ -208,19 +208,20 @@
         }
 
         .expertise-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--white);
+            border: 2px solid rgba(200, 16, 46, 0.1);
             border-radius: 16px;
             padding: 32px;
             text-align: center;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
         }
 
         .expertise-card:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--white);
             border-color: var(--primary-color);
             transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(200, 16, 46, 0.12);
         }
 
         .expertise-icon {
@@ -238,13 +239,14 @@
         .expertise-card h4 {
             font-size: 1.25rem;
             font-weight: 700;
-            color: white;
+            color: var(--secondary-color);
             margin-bottom: 12px;
         }
 
         .expertise-card p {
             font-size: 0.9375rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--text-medium);
+            line-height: 1.7;
         }
     </style>
 </head>
