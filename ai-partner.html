@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Partner - Get Your Team Using AI | NXSYS</title>
+    <meta name="description" content="AI adoption made simple for your enterprise. We provide the tools and training to turn your workforce into an AI-powered team. Strategy, custom tools, and habit training.">
+    <link rel="stylesheet" href="styles-new.css">
+    <link rel="stylesheet" href="ai-styles.css">
+    <link rel="stylesheet" href="parallax-effects.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* AI Partner - Matching Website Red Theme */
+        .coach-hero {
+            background: #000000;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .coach-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(200, 16, 46, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 77, 109, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .coach-badge {
+            display: inline-block;
+            background: rgba(200, 16, 46, 0.2);
+            border: 1px solid rgba(200, 16, 46, 0.4);
+            color: #ff8fa3;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .coach-gradient-text {
+            background: linear-gradient(135deg, #C8102E, #ff4d6d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .coach-btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), #ff4d6d);
+            color: white;
+            padding: 20px 48px;
+            border-radius: 50px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(200, 16, 46, 0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .coach-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(200, 16, 46, 0.4);
+        }
+
+        .hook-banner {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hook-text {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            color: white;
+            font-weight: 600;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .problem-section {
+            background: white;
+            padding: 100px 0;
+        }
+
+        .problem-card {
+            background: #fef5f6;
+            border-radius: 24px;
+            padding: 48px;
+            border: 2px solid rgba(200, 16, 46, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .problem-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 20px 60px rgba(200, 16, 46, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .services-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(200, 16, 46, 0.3);
+            border-radius: 24px;
+            padding: 48px;
+            text-align: center;
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary-color);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(200, 16, 46, 0.3);
+        }
+
+        .service-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 32px;
+            background: linear-gradient(135deg, var(--primary-color), #ff4d6d);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .why-section {
+            background: white;
+            padding: 100px 0;
+        }
+
+        .why-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            padding: 32px;
+            background: #fef5f6;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .why-card:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 32px rgba(200, 16, 46, 0.1);
+        }
+
+        .why-icon {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), #ff4d6d);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .contact-form {
+            background: white;
+            border-radius: 24px;
+            padding: 48px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 8px;
+            font-size: 0.9375rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(200, 16, 46, 0.1);
+        }
+
+        .form-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 18px 32px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(200, 16, 46, 0.3);
+        }
+
+        .philosophy-box {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            margin-top: 40px;
+            border: 2px solid var(--primary-color);
+            text-align: center;
+        }
+
+        .philosophy-box p {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-style: italic;
+            margin: 0;
+        }
+
+        /* Floating elements */
+        .float-element {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(200, 16, 46, 0.2), rgba(255, 77, 109, 0.1));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .float-1 {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            right: 5%;
+            animation-delay: 0s;
+        }
+
+        .float-2 {
+            width: 200px;
+            height: 200px;
+            bottom: 20%;
+            left: 10%;
+            animation-delay: 2s;
+        }
+
+        .float-3 {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* Stats cards for hero */
+        .coach-stat {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(200, 16, 46, 0.3);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .coach-stat:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-color);
+            box-shadow: 0 20px 60px rgba(200, 16, 46, 0.3);
+        }
+
+        .coach-stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #C8102E, #ff4d6d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .coach-stat-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+
+        /* Bridge Section - Split Screen Visual */
+        .bridge-section {
+            background: white;
+            padding: 100px 0;
+            overflow: hidden;
+        }
+
+        .bridge-container {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 0;
+            align-items: stretch;
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: 500px;
+        }
+
+        @media (max-width: 968px) {
+            .bridge-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        .bridge-side {
+            padding: 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .bridge-left {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-radius: 24px 0 0 24px;
+            color: white;
+        }
+
+        @media (max-width: 968px) {
+            .bridge-left {
+                border-radius: 24px;
+            }
+        }
+
+        .bridge-right {
+            background: linear-gradient(135deg, #fef5f6 0%, #fff0f2 100%);
+            border-radius: 0 24px 24px 0;
+            border: 2px solid rgba(200, 16, 46, 0.1);
+            border-left: none;
+        }
+
+        @media (max-width: 968px) {
+            .bridge-right {
+                border-radius: 24px;
+                border-left: 2px solid rgba(200, 16, 46, 0.1);
+            }
+        }
+
+        .bridge-icon-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .bridge-left .bridge-icon-box {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .bridge-right .bridge-icon-box {
+            background: linear-gradient(135deg, var(--primary-color), #ff4d6d);
+        }
+
+        .bridge-side h3 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .bridge-left h3 {
+            color: white;
+        }
+
+        .bridge-right h3 {
+            color: var(--secondary-color);
+        }
+
+        .bridge-side p {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .bridge-left p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .bridge-right p {
+            color: #64748b;
+        }
+
+        .bridge-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .bridge-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .bridge-left .bridge-features li {
+            color: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .bridge-right .bridge-features li {
+            color: var(--secondary-color);
+            border-bottom: 1px solid rgba(200, 16, 46, 0.1);
+        }
+
+        .bridge-features li:last-child {
+            border-bottom: none;
+        }
+
+        /* The Connecting Bridge */
+        .bridge-connector {
+            width: 160px;
+            background: linear-gradient(180deg, #f8fafc 0%, white 50%, #fef5f6 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 32px 16px;
+        }
+
+        @media (max-width: 968px) {
+            .bridge-connector {
+                width: 100%;
+                padding: 48px 32px;
+                background: linear-gradient(90deg, #1e293b 0%, var(--primary-color) 50%, #fef5f6 100%);
+                border-radius: 24px;
+            }
+        }
+
+        .bridge-connector::before,
+        .bridge-connector::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            background: linear-gradient(180deg, rgba(200, 16, 46, 0.2), var(--primary-color), rgba(200, 16, 46, 0.2));
+        }
+
+        .bridge-connector::before {
+            top: 0;
+            height: 30%;
+        }
+
+        .bridge-connector::after {
+            bottom: 0;
+            height: 30%;
+        }
+
+        @media (max-width: 968px) {
+            .bridge-connector::before,
+            .bridge-connector::after {
+                display: none;
+            }
+        }
+
+        .bridge-label {
+            background: linear-gradient(135deg, var(--primary-color), #ff4d6d);
+            color: white;
+            padding: 20px 16px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(200, 16, 46, 0.3);
+            position: relative;
+            z-index: 10;
+        }
+
+        .bridge-label-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .bridge-label-text {
+            font-size: 1.125rem;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+
+        /* Heritage Section */
+        .heritage-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .heritage-badge {
+            display: inline-block;
+            background: rgba(200, 16, 46, 0.15);
+            border: 1px solid rgba(200, 16, 46, 0.3);
+            color: #ff8fa3;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .heritage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .heritage-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.4s ease;
+        }
+
+        .heritage-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(200, 16, 46, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .heritage-card-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--primary-color), #ff4d6d);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: white;
+        }
+
+        .heritage-card h4 {
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .heritage-card p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        /* Gap Section */
+        .gap-section {
+            background: white;
+            padding: 100px 0;
+        }
+
+        .gap-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            max-width: 1000px;
+            margin: 60px auto 0;
+        }
+
+        @media (max-width: 768px) {
+            .gap-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .gap-card {
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .gap-card-bad {
+            background: #fef2f2;
+            border: 2px solid #fecaca;
+        }
+
+        .gap-card-good {
+            background: #fef5f6;
+            border: 2px solid var(--primary-color);
+        }
+
+        .gap-card h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .gap-card-bad h4 {
+            color: #991b1b;
+        }
+
+        .gap-card-good h4 {
+            color: var(--primary-color);
+        }
+
+        .gap-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .gap-card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            font-size: 1rem;
+            line-height: 1.6;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .gap-card li:last-child {
+            border-bottom: none;
+        }
+
+        .gap-card-bad li {
+            color: #7f1d1d;
+        }
+
+        .gap-card-good li {
+            color: var(--secondary-color);
+        }
+
+        /* Value Proposition */
+        .value-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .value-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .value-content h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: white;
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+
+        .value-content p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="container">
+            <div class="top-header-content">
+                <div class="contact-info">
+                    <span><i data-lucide="phone" style="width: 16px; height: 16px; display: inline-block; vertical-align: middle; margin-right: 6px;"></i> +971-4-5729550</span>
+                    <span><i data-lucide="mail" style="width: 16px; height: 16px; display: inline-block; vertical-align: middle; margin-right: 6px;"></i> info@nxsys.com</span>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" style="width: 18px; height: 18px;"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter" style="width: 18px; height: 18px;"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html"><img src="NXSYS Logo.png" alt="NXSYS Logo"></a>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="about-company.html">About</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about-company.html">Company</a></li>
+                            <li><a href="about-team.html">Our Team</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="ai-innovation.html" style="color: var(--primary-color); font-weight: 600;">
+                            <i data-lucide="sparkles" style="width: 18px; height: 18px; display: inline-block; vertical-align: middle; margin-right: 4px;"></i>
+                            AI Solutions
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ai-innovation.html">AI Innovation</a></li>
+                            <li><a href="ai-partner.html">AI Partner</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="services-consulting.html">Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services-consulting.html">SAP Consulting</a></li>
+                            <li><a href="services-implementation.html">SAP Implementation</a></li>
+                            <li><a href="services-s4hana.html">SAP S/4HANA</a></li>
+                            <li><a href="services-successfactors.html">SuccessFactors</a></li>
+                            <li><a href="services-support.html">SAP Support</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="solutions-digital.html">Solutions</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="solutions-digital.html">Digital Transformation</a></li>
+                            <li><a href="solutions-cloud.html">Cloud Solutions</a></li>
+                            <li><a href="solutions-analytics.html">Analytics & BI</a></li>
+                            <li><a href="solutions-custom.html">Custom Development</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="industry-manufacturing.html">Industries</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="industry-manufacturing.html">Manufacturing</a></li>
+                            <li><a href="industry-retail.html">Retail</a></li>
+                            <li><a href="industry-healthcare.html">Healthcare</a></li>
+                            <li><a href="industry-finance.html">Banking & Finance</a></li>
+                            <li><a href="industry-energy.html">Energy & Utilities</a></li>
+                            <li><a href="industry-fbb.html">Food & Beverage</a></li>
+                            <li><a href="industry-construction.html">Construction</a></li>
+                            <li><a href="industry-logistics.html">Logistics</a></li>
+                            <li><a href="industry-education.html">Education</a></li>
+                            <li><a href="industry-hospitality.html">Hospitality</a></li>
+                            <li><a href="industry-automotive.html">Automotive</a></li>
+                            <li><a href="industry-pharmaceuticals.html">Pharmaceuticals</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html" class="btn-contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="coach-hero">
+        <!-- Floating Elements -->
+        <div class="float-element float-1"></div>
+        <div class="float-element float-2"></div>
+        <div class="float-element float-3"></div>
+
+        <div class="container" style="position: relative; z-index: 10;">
+            <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <div class="coach-badge" style="margin-bottom: 32px;">
+                    <i data-lucide="building-2" style="width: 20px; height: 20px; display: inline-block; vertical-align: middle; margin-right: 8px;"></i>
+                    YOUR ENTERPRISE AI PARTNER
+                </div>
+
+                <h1 style="font-size: clamp(2.5rem, 7vw, 4.5rem); font-weight: 900; color: white; margin-bottom: 24px; line-height: 1.1;">
+                    From ERP Experts<br/>
+                    <span class="coach-gradient-text">to AI Adoption Leaders</span>
+                </h1>
+
+                <p style="font-size: 1.375rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 48px; line-height: 1.8; max-width: 750px; margin-left: auto; margin-right: auto;">
+                    15+ years of enterprise system expertise. Now helping companies unlock the real value of AI — by transforming how their teams actually work.
+                </p>
+
+                <a href="#contact" class="coach-btn-primary">
+                    <i data-lucide="message-circle" style="width: 24px; height: 24px; display: inline-block; vertical-align: middle; margin-right: 12px;"></i>
+                    Let's Talk
+                </a>
+
+                <!-- Stats -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; margin-top: 80px;">
+                    <div class="coach-stat">
+                        <div class="coach-stat-number">15+</div>
+                        <div class="coach-stat-label">Years in Enterprise Tech</div>
+                    </div>
+                    <div class="coach-stat">
+                        <div class="coach-stat-number">200+</div>
+                        <div class="coach-stat-label">SAP Certifications</div>
+                    </div>
+                    <div class="coach-stat">
+                        <div class="coach-stat-number">50+</div>
+                        <div class="coach-stat-label">Enterprise Consultants</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hook Banner -->
+    <section class="hook-banner">
+        <div class="container">
+            <p class="hook-text">
+                <i data-lucide="lightbulb" style="width: 32px; height: 32px; display: inline-block; vertical-align: middle; margin-right: 16px;"></i>
+                "Buying AI tools is easy. Getting your team to actually use them is the hard part. <strong>We fix that.</strong>"
+            </p>
+        </div>
+    </section>
+
+    <!-- Bridge Section - Split Screen Visual -->
+    <section class="bridge-section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: var(--secondary-color); margin-bottom: 16px;">
+                    Where <span class="coach-gradient-text">Stability Meets Innovation</span>
+                </h2>
+                <p style="font-size: 1.25rem; color: #64748b; max-width: 700px; margin: 0 auto;">
+                    We bridge the gap between your trusted enterprise systems and the AI-powered future
+                </p>
+            </div>
+
+            <div class="bridge-container">
+                <!-- Left Side: ERP / Stability -->
+                <div class="bridge-side bridge-left">
+                    <div class="bridge-icon-box">
+                        <i data-lucide="database" style="width: 40px; height: 40px; color: white;"></i>
+                    </div>
+                    <h3>Your Enterprise Foundation</h3>
+                    <p>The structured systems that run your business. Order, stability, and data you can trust.</p>
+                    <ul class="bridge-features">
+                        <li>
+                            <i data-lucide="check" style="width: 18px; height: 18px; color: #22c55e;"></i>
+                            Finance & Accounting
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 18px; height: 18px; color: #22c55e;"></i>
+                            Supply Chain & Operations
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 18px; height: 18px; color: #22c55e;"></i>
+                            HR & Workforce Data
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 18px; height: 18px; color: #22c55e;"></i>
+                            Customer & Sales Records
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Bridge Connector -->
+                <div class="bridge-connector">
+                    <div class="bridge-label">
+                        <div class="bridge-label-title">The Missing Link</div>
+                        <div class="bridge-label-text">Behavioral Adoption</div>
+                    </div>
+                </div>
+
+                <!-- Right Side: AI / Innovation -->
+                <div class="bridge-side bridge-right">
+                    <div class="bridge-icon-box">
+                        <i data-lucide="sparkles" style="width: 40px; height: 40px; color: white;"></i>
+                    </div>
+                    <h3>AI-Powered Growth</h3>
+                    <p>The intelligent tools that multiply your team's capabilities. Speed, insight, and competitive edge.</p>
+                    <ul class="bridge-features">
+                        <li>
+                            <i data-lucide="zap" style="width: 18px; height: 18px; color: var(--primary-color);"></i>
+                            Instant Data Analysis
+                        </li>
+                        <li>
+                            <i data-lucide="zap" style="width: 18px; height: 18px; color: var(--primary-color);"></i>
+                            Automated Reporting
+                        </li>
+                        <li>
+                            <i data-lucide="zap" style="width: 18px; height: 18px; color: var(--primary-color);"></i>
+                            Smart Decision Support
+                        </li>
+                        <li>
+                            <i data-lucide="zap" style="width: 18px; height: 18px; color: var(--primary-color);"></i>
+                            Workforce Productivity
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heritage Section -->
+    <section class="heritage-section">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <span class="heritage-badge">Our Heritage</span>
+                <h2 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: white; margin-bottom: 24px;">
+                    We're Not a New AI Agency.<br/>
+                    <span class="coach-gradient-text">We're Enterprise Veterans.</span>
+                </h2>
+                <p style="font-size: 1.25rem; color: rgba(255, 255, 255, 0.8); line-height: 1.8;">
+                    For over 15 years, we've helped large companies run their most critical systems. SAP. ERP. The backbone of enterprise operations. We know what "enterprise-grade" really means.
+                </p>
+            </div>
+
+            <div class="heritage-grid">
+                <div class="heritage-card">
+                    <div class="heritage-card-icon">
+                        <i data-lucide="shield-check" style="width: 32px; height: 32px;"></i>
+                    </div>
+                    <h4>Data Security First</h4>
+                    <p>We've handled sensitive financial, HR, and operational data for years. Security isn't an afterthought — it's in our DNA.</p>
+                </div>
+
+                <div class="heritage-card">
+                    <div class="heritage-card-icon">
+                        <i data-lucide="cog" style="width: 32px; height: 32px;"></i>
+                    </div>
+                    <h4>Complex Systems Expertise</h4>
+                    <p>We understand how enterprise software really works. The integrations. The dependencies. The things that can go wrong.</p>
+                </div>
+
+                <div class="heritage-card">
+                    <div class="heritage-card-icon">
+                        <i data-lucide="users" style="width: 32px; height: 32px;"></i>
+                    </div>
+                    <h4>Enterprise Culture</h4>
+                    <p>We know how large organizations make decisions. The approvals. The stakeholders. We speak your language.</p>
+                </div>
+
+                <div class="heritage-card">
+                    <div class="heritage-card-icon">
+                        <i data-lucide="trending-up" style="width: 32px; height: 32px;"></i>
+                    </div>
+                    <h4>Proven Track Record</h4>
+                    <p>200+ certifications. 50+ consultants. Successful implementations across 12 industries. We deliver results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gap Section -->
+    <section class="gap-section">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h2 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: var(--secondary-color); margin-bottom: 16px;">
+                    The <span class="coach-gradient-text">Problem</span> with Generic AI Agencies
+                </h2>
+                <p style="font-size: 1.25rem; color: #64748b; line-height: 1.8;">
+                    Most AI consultants build chatbots and demos. They don't understand your business data — or the people who use it every day.
+                </p>
+            </div>
+
+            <div class="gap-comparison">
+                <div class="gap-card gap-card-bad">
+                    <h4>
+                        <i data-lucide="x-circle" style="width: 24px; height: 24px;"></i>
+                        Generic AI Agencies
+                    </h4>
+                    <ul>
+                        <li>
+                            <i data-lucide="x" style="width: 16px; height: 16px; flex-shrink: 0; margin-top: 4px;"></i>
+                            Don't understand Finance, Supply Chain, or HR data
+                        </li>
+                        <li>
+                            <i data-lucide="x" style="width: 16px; height: 16px; flex-shrink: 0; margin-top: 4px;"></i>
+                            Build flashy demos that don't fit real workflows
+                        </li>
+                        <li>
+                            <i data-lucide="x" style="width: 16px; height: 16px; flex-shrink: 0; margin-top: 4px;"></i>
+                            Ignore security and compliance requirements
+                        </li>
+                        <li>
+                            <i data-lucide="x" style="width: 16px; height: 16px; flex-shrink: 0; margin-top: 4px;"></i>
+                            Leave your team confused and unchanged
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="gap-card gap-card-good">
+                    <h4>
+                        <i data-lucide="check-circle" style="width: 24px; height: 24px;"></i>
+                        NXSYS Approach
+                    </h4>
+                    <ul>
+                        <li>
+                            <i data-lucide="check" style="width: 16px; height: 16px; flex-shrink: 0; margin-top: 4px; color: var(--primary-color);"></i>
+                            Deep expertise in enterprise business data
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 16px; height: 16px; flex-shrink: 0; margin-top: 4px; color: var(--primary-color);"></i>
+                            Solutions built around how your teams actually work
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 16px; height: 16px; flex-shrink: 0; margin-top: 4px; color: var(--primary-color);"></i>
+                            Enterprise-grade security as standard
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 16px; height: 16px; flex-shrink: 0; margin-top: 4px; color: var(--primary-color);"></i>
+                            Behavioral training that makes adoption stick
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Banner -->
+    <section class="value-section">
+        <div class="container">
+            <div class="value-content">
+                <h2>Get More From Your ERP Investment</h2>
+                <p>
+                    You've already invested millions in your enterprise systems. We help you add an "AI layer" on top — unlocking insights, automating tasks, and transforming how your workforce performs. Real ROI. Real results.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work Section -->
+    <section class="why-section">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div style="text-align: center; margin-bottom: 60px;">
+                    <h2 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: var(--secondary-color); margin-bottom: 16px;">
+                        How We <span class="coach-gradient-text">Transform</span> Your Team
+                    </h2>
+                    <p style="font-size: 1.25rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                        A practical approach focused on business value and lasting change
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i data-lucide="search" style="width: 28px; height: 28px;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.375rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 8px;">1. Discover Where AI Actually Helps</h3>
+                        <p style="color: #64748b; line-height: 1.8; font-size: 1.0625rem;">
+                            We analyze your workflows and data. No generic recommendations. We find the specific tasks where AI will save your team real time — and where it won't.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i data-lucide="wrench" style="width: 28px; height: 28px;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.375rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 8px;">2. Build Secure, Custom Tools</h3>
+                        <p style="color: #64748b; line-height: 1.8; font-size: 1.0625rem;">
+                            We create AI solutions that work with your existing systems. Your data stays protected. Your tools fit your workflow. No security compromises.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i data-lucide="users" style="width: 28px; height: 28px;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.375rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 8px;">3. Train for Behavioral Change</h3>
+                        <p style="color: #64748b; line-height: 1.8; font-size: 1.0625rem;">
+                            We don't just show people how to use tools. We help them build new habits. Hands-on practice. Real scenarios. Changes that stick long after we're gone.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i data-lucide="bar-chart-3" style="width: 28px; height: 28px;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.375rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 8px;">4. Measure Real Business Impact</h3>
+                        <p style="color: #64748b; line-height: 1.8; font-size: 1.0625rem;">
+                            We track adoption rates, time saved, and productivity gains. You'll see exactly what's working. No vague promises — just clear results you can report to leadership.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container" style="position: relative; z-index: 10;">
+            <div style="text-align: center; margin-bottom: 48px;">
+                <h2 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: white; margin-bottom: 16px;">
+                    Ready to Unlock AI Value?
+                </h2>
+                <p style="font-size: 1.25rem; color: rgba(255, 255, 255, 0.9); max-width: 600px; margin: 0 auto;">
+                    Let's discuss how to transform your workforce with AI — built on a foundation of enterprise expertise you can trust.
+                </p>
+            </div>
+
+            <form class="contact-form" action="https://formspree.io/f/xeoqdkjl" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Smith" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" placeholder="Your Company Inc." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="john@company.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Tell us about your AI goals (optional)</label>
+                    <textarea id="message" name="message" rows="4" placeholder="What challenges are you facing with AI adoption?"></textarea>
+                </div>
+
+                <input type="hidden" name="_subject" value="AI Partner Inquiry from Website">
+
+                <button type="submit" class="form-submit">
+                    <i data-lucide="send" style="width: 20px; height: 20px; display: inline-block; vertical-align: middle; margin-right: 8px;"></i>
+                    Start the Conversation
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <img src="NXSYS Logo.png" alt="NXSYS Logo" class="footer-logo">
+                    <p>AI-First SAP Systems Integrator in UAE, helping enterprises adopt AI the right way.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services-consulting.html">SAP Consulting</a></li>
+                        <li><a href="services-implementation.html">SAP Implementation</a></li>
+                        <li><a href="services-s4hana.html">SAP S/4HANA</a></li>
+                        <li><a href="services-successfactors.html">SuccessFactors</a></li>
+                        <li><a href="services-support.html">Managed Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>AI Solutions</h4>
+                    <ul>
+                        <li><a href="ai-innovation.html">AI Innovation</a></li>
+                        <li><a href="ai-partner.html">AI Partner</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about-company.html">About Us</a></li>
+                        <li><a href="about-team.html">Our Team</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NXSYS. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
