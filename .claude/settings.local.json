@@ -5,7 +5,12 @@
       "Bash(del \"C:\\Dev\\NXSYS\\update-icons.ps1\")",
       "Bash(start industry-fbb.html)",
       "Bash(git restore:*)",
-      "Bash(start ai-innovation-investor.html)"
+      "Bash(start ai-innovation-investor.html)",
+      "Bash(start contact.html)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Bash(powershell -Command \"Get-ChildItem ''C:\\Dev\\NXSYS\\*.html'' | Where-Object { $_Name -notlike ''*backup*'' -and $_Name -notlike ''*old*'' } | ForEach-Object { (Get-Content $_FullName -Raw) -replace ''<li><a href=\"\"about-team.html\"\">Our Team</a></li>'', ''<li><a href=\"\"about-team.html\"\">Our Leadership</a></li>'' | Set-Content $_FullName -NoNewline }\")"
     ],
     "deny": [],
     "ask": []
