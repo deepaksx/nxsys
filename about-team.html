@@ -12,308 +12,339 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        .team-intro {
-            padding: 80px 0;
-            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+        /* Partners Section - Glorified */
+        .partners-section {
+            padding: 100px 0 120px;
+            background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
         }
 
-        .leadership-team, .practice-leads {
-            padding: 80px 0;
-            background: var(--white);
-        }
-
-        .practice-leads {
-            background: var(--bg-lighter);
-        }
-
-        .section-title {
+        .partners-header {
             text-align: center;
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 800;
-            color: var(--secondary-color);
             margin-bottom: 60px;
         }
 
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .team-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 48px 32px;
-            text-align: center;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-            border: 2px solid transparent;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .team-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(200, 16, 46, 0.12);
-            border-color: var(--primary-color);
-        }
-
-        .team-avatar {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 24px;
-            background: linear-gradient(135deg, var(--primary-color), #ff4d6d);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2.5rem;
-        }
-
-        .team-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
+        .partners-header h2 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 900;
             color: var(--secondary-color);
-            margin-bottom: 8px;
-        }
-
-        .team-title {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--primary-color);
             margin-bottom: 16px;
         }
 
-        .team-bio {
-            font-size: 0.9375rem;
-            line-height: 1.7;
+        .partners-header p {
+            font-size: 1.25rem;
             color: var(--text-medium);
-            margin-bottom: 20px;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .team-social {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .team-social a {
-            width: 40px;
-            height: 40px;
-            background: var(--bg-lighter);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-medium);
-            transition: all 0.3s ease;
-        }
-
-        .team-social a:hover {
-            background: var(--primary-color);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .team-stats {
-            padding: 100px 0;
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-            color: white;
-        }
-
-        .stats-grid {
+        .partners-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 48px;
             max-width: 1000px;
             margin: 0 auto;
         }
 
-        .stat-card {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: white;
-            margin-bottom: 8px;
-        }
-
-        .stat-label {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .certifications {
-            padding: 120px 0;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .certifications::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(200, 16, 46, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .certifications::after {
-            content: '';
-            position: absolute;
-            bottom: -50%;
-            left: -20%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(200, 16, 46, 0.06) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .certifications .container {
-            position: relative;
-            z-index: 10;
-        }
-
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 32px;
-            max-width: 1100px;
-            margin: 60px auto 0;
-        }
-
-        .cert-item {
+        .partner-card {
             background: linear-gradient(135deg, #ffffff 0%, #fefefe 100%);
-            padding: 32px 28px;
-            border-radius: 20px;
+            border-radius: 24px;
+            padding: 48px 40px;
             text-align: center;
-            font-weight: 700;
-            font-size: 1.0625rem;
-            color: var(--secondary-color);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
             border: 2px solid rgba(200, 16, 46, 0.1);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
             position: relative;
             overflow: hidden;
         }
 
-        .cert-item::before {
+        .partner-card::before {
             content: '';
             position: absolute;
             top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(200, 16, 46, 0.1), transparent);
-            transition: left 0.6s ease;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), #ff4d6d);
         }
 
-        .cert-item:hover::before {
-            left: 100%;
-        }
-
-        .cert-item:hover {
+        .partner-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 24px 80px rgba(200, 16, 46, 0.15);
             border-color: var(--primary-color);
-            background: linear-gradient(135deg, #ffffff 0%, #fff5f7 100%);
-            transform: translateY(-8px) scale(1.03);
-            box-shadow: 0 20px 50px rgba(200, 16, 46, 0.15);
         }
 
-        .cert-icon-badge {
-            width: 56px;
-            height: 56px;
-            margin: 0 auto 16px;
+        .partner-avatar {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 28px;
             background: linear-gradient(135deg, var(--primary-color), #ff4d6d);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            transition: all 0.4s ease;
+            box-shadow: 0 12px 32px rgba(200, 16, 46, 0.3);
         }
 
-        .cert-item:hover .cert-icon-badge {
-            transform: rotate(360deg) scale(1.1);
-            box-shadow: 0 8px 24px rgba(200, 16, 46, 0.4);
+        .partner-card h3 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin-bottom: 8px;
         }
 
+        .partner-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .partner-bio {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-medium);
+            text-align: left;
+        }
+
+        .partner-expertise {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .partner-expertise-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .partner-expertise-value {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        /* Compact Team Info Section */
+        .team-compact {
+            padding: 60px 0;
+            background: var(--bg-lighter);
+        }
+
+        .team-compact .section-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 32px;
+        }
+
+        .compact-stats {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .compact-stat {
+            text-align: center;
+        }
+
+        .compact-stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .compact-stat-label {
+            font-size: 0.875rem;
+            color: var(--text-medium);
+        }
+
+        .compact-certs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .compact-cert {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            border: none;
+            transition: transform 0.2s ease;
+        }
+
+        .compact-cert:hover {
+            transform: scale(1.05);
+        }
+
+        /* Heat map levels - hottest to coolest */
+        .heat-5 { background: linear-gradient(135deg, #c8102e, #e63950); color: white; } /* Hottest - trending */
+        .heat-4 { background: linear-gradient(135deg, #e85d04, #f48c06); color: white; } /* Very hot */
+        .heat-3 { background: linear-gradient(135deg, #f4a261, #e9c46a); color: #1a1a1a; } /* Warm */
+        .heat-2 { background: linear-gradient(135deg, #90be6d, #76c893); color: #1a1a1a; } /* Moderate */
+        .heat-1 { background: linear-gradient(135deg, #577590, #4d908e); color: white; } /* Established */
+
+        .heat-legend {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .heat-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            color: var(--text-medium);
+        }
+
+        .heat-legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .heat-legend-dot.l5 { background: #c8102e; }
+        .heat-legend-dot.l4 { background: #e85d04; }
+        .heat-legend-dot.l3 { background: #f4a261; }
+        .heat-legend-dot.l2 { background: #90be6d; }
+        .heat-legend-dot.l1 { background: #577590; }
+
+        /* Practice Areas - Enhanced */
+        .practice-compact {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .practice-compact .section-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 12px;
+        }
+
+        .practice-subtitle {
+            text-align: center;
+            font-size: 0.9375rem;
+            color: var(--text-medium);
+            margin-bottom: 32px;
+        }
+
+        .practice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .practice-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 16px;
+            border-radius: 16px;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .practice-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .practice-card .practice-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .practice-card h4 {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin: 0;
+        }
+
+        .practice-card p {
+            font-size: 0.75rem;
+            color: var(--text-medium);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* Practice card themes - sober/muted */
+        .practice-ai { background: #f8f8f8; }
+        .practice-ai .practice-icon { background: #4a4a4a; color: white; }
+
+        .practice-cloud { background: #f5f7fa; }
+        .practice-cloud .practice-icon { background: #5a6a7a; color: white; }
+
+        .practice-data { background: #f7f8f6; }
+        .practice-data .practice-icon { background: #5a6a5a; color: white; }
+
+        .practice-hr { background: #f9f8f6; }
+        .practice-hr .practice-icon { background: #7a6a5a; color: white; }
+
+        .practice-finance { background: #f7f6f8; }
+        .practice-finance .practice-icon { background: #6a5a7a; color: white; }
+
+        .practice-scm { background: #f9f7f6; }
+        .practice-scm .practice-icon { background: #7a5a4a; color: white; }
+
+        .practice-core { background: #f6f8f9; }
+        .practice-core .practice-icon { background: #4a6a7a; color: white; }
+
+        .practice-integration { background: #f8f6f7; }
+        .practice-integration .practice-icon { background: #6a4a5a; color: white; }
+
+        .practice-training { background: #f6f8f7; }
+        .practice-training .practice-icon { background: #4a6a5a; color: white; }
+
+        .practice-adoption { background: #f8f7f6; }
+        .practice-adoption .practice-icon { background: #6a5a4a; color: white; }
+
+        /* Join Team - Compact */
         .join-team {
-            padding: 100px 0;
+            padding: 60px 0;
             background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
             color: white;
             text-align: center;
         }
 
         .join-content h2 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 900;
+            font-size: 1.75rem;
+            font-weight: 800;
             color: white;
-            margin-bottom: 24px;
+            margin-bottom: 16px;
         }
 
         .join-content p {
-            font-size: 1.25rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 40px;
-            max-width: 700px;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 24px;
+            max-width: 500px;
             margin-left: auto;
             margin-right: auto;
-        }
-
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 32px;
-            margin-top: 60px;
-        }
-
-        .expertise-card {
-            background: var(--white);
-            border: 2px solid rgba(200, 16, 46, 0.1);
-            border-radius: 16px;
-            padding: 32px;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-        }
-
-        .expertise-card:hover {
-            background: var(--white);
-            border-color: var(--primary-color);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(200, 16, 46, 0.12);
-        }
-
-        .expertise-icon {
-            width: 64px;
-            height: 64px;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, var(--primary-color), #ff4d6d);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-
-        .expertise-card h4 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            margin-bottom: 12px;
-        }
-
-        .expertise-card p {
-            font-size: 0.9375rem;
-            color: var(--text-medium);
-            line-height: 1.7;
         }
     </style>
 </head>
@@ -403,254 +434,200 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Our Team</h1>
-            <p>World-Class SAP Experts with AI/ML Capabilities</p>
+            <h1>Our Partners</h1>
+            <p>Visionary Leaders Driving AI-First SAP Transformation</p>
         </div>
     </section>
 
-    <!-- Team Introduction -->
-    <section class="team-intro">
+    <!-- Partners Section - Glorified -->
+    <section class="partners-section">
         <div class="container">
-            <div class="section-header">
-                <h2>AI-Powered SAP Consulting Team</h2>
-                <p style="max-width: 800px; margin: 0 auto;">Our team combines deep SAP expertise with cutting-edge AI/ML capabilities. With 50+ certified consultants holding 200+ certifications, we bring rare expertise in both traditional SAP and modern AI technologies.</p>
+            <div class="partners-header">
+                <h2>Meet Our Partners</h2>
+                <p>Combining 40+ years of SAP expertise with a bold vision for AI-powered enterprise transformation</p>
             </div>
 
-            <div class="expertise-grid">
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i data-lucide="graduation-cap" style="width: 32px; height: 32px;"></i>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-avatar">
+                        <i data-lucide="briefcase" style="width: 56px; height: 56px;"></i>
                     </div>
-                    <h4>Deep SAP Expertise</h4>
-                    <p>200+ certifications across all SAP modules including S/4HANA, SuccessFactors, BTP, and Analytics</p>
+                    <h3>Imran Haider</h3>
+                    <p class="partner-title">Partner</p>
+                    <p class="partner-bio">As a Partner at NXSYS, Imran plays a critical role in shaping the company's growth trajectory and strengthening its position as the UAE's leading AI-First SAP Systems Integrator. With over 20 years of experience in the SAP ecosystem, Imran brings a powerful combination of commercial leadership, client partnership excellence, and deep SAP domain expertise.</p>
+                    <p class="partner-bio" style="margin-top: 16px;">Imran leads NXSYS's sales and client engagement strategy, driving enterprise adoption of AI-powered SAP solutions across the Middle East & East Africa. His consultative approach and commitment to long-term relationships enable organizations to confidently embrace AI-accelerated SAP transformations.</p>
+                    <div class="partner-expertise">
+                        <div class="partner-expertise-label">Core Expertise</div>
+                        <div class="partner-expertise-value">SAP Supply Chain Management | Enterprise Sales | Client Partnerships</div>
+                    </div>
                 </div>
 
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i data-lucide="cpu" style="width: 32px; height: 32px;"></i>
+                <div class="partner-card">
+                    <div class="partner-avatar">
+                        <i data-lucide="target" style="width: 56px; height: 56px;"></i>
                     </div>
-                    <h4>AI/ML Capabilities</h4>
-                    <p>Dedicated AI engineering team with expertise in LLMs, RAG, predictive analytics, and machine learning</p>
-                </div>
-
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i data-lucide="briefcase" style="width: 32px; height: 32px;"></i>
+                    <h3>Deepak Saxena</h3>
+                    <p class="partner-title">Partner</p>
+                    <p class="partner-bio">As a Partner at NXSYS, Deepak leads the firm's delivery and execution organization, ensuring every AI-powered SAP transformation is delivered with precision, speed, and uncompromising quality. With over 20 years of deep expertise in SAP Finance and enterprise transformation, Deepak plays a pivotal role in turning NXSYS's AI-first vision into operational excellence.</p>
+                    <p class="partner-bio" style="margin-top: 16px;">A people-centric leader, Deepak champions team development and capability building within NXSYS. He mentors consultants, architects, and delivery leads, fostering a culture focused on innovation, accountability, and continuous learning.</p>
+                    <div class="partner-expertise">
+                        <div class="partner-expertise-label">Core Expertise</div>
+                        <div class="partner-expertise-value">SAP Finance | Program Delivery | Team Development</div>
                     </div>
-                    <h4>Industry Experience</h4>
-                    <p>15+ years average experience with successful implementations across 12 industry verticals</p>
-                </div>
-
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i data-lucide="globe" style="width: 32px; height: 32px;"></i>
-                    </div>
-                    <h4>Regional Expertise</h4>
-                    <p>Deep understanding of UAE and GCC market requirements, compliance, and business practices</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Leadership Team -->
-    <section class="leadership-team">
+    <!-- Compact Team Stats & Certifications -->
+    <section class="team-compact">
         <div class="container">
-            <h2 class="section-title">Leadership Team</h2>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-avatar">
-                        <i data-lucide="user-circle" style="width: 48px; height: 48px;"></i>
-                    </div>
-                    <h3>Chief Executive Officer</h3>
-                    <p class="team-title">CEO & Founder</p>
-                    <p class="team-bio">Visionary leader with 20+ years of experience in SAP consulting and enterprise solutions. Driving NXSYS's AI-first transformation across the Middle East.</p>
-                    <div class="team-social">
-                        <a href="#"><i data-lucide="linkedin" style="width: 20px; height: 20px;"></i></a>
-                    </div>
+            <h3 class="section-title">Our Team at a Glance</h3>
+            <div class="compact-stats">
+                <div class="compact-stat">
+                    <div class="compact-stat-number">50+</div>
+                    <div class="compact-stat-label">SAP Consultants</div>
                 </div>
-
-                <div class="team-card">
-                    <div class="team-avatar">
-                        <i data-lucide="code-2" style="width: 48px; height: 48px;"></i>
-                    </div>
-                    <h3>Chief Technology Officer</h3>
-                    <p class="team-title">CTO</p>
-                    <p class="team-bio">Technology expert specializing in SAP S/4HANA, AI/ML platforms, cloud migrations, and building proprietary AI engines for SAP consulting.</p>
-                    <div class="team-social">
-                        <a href="#"><i data-lucide="linkedin" style="width: 20px; height: 20px;"></i></a>
-                    </div>
+                <div class="compact-stat">
+                    <div class="compact-stat-number">200+</div>
+                    <div class="compact-stat-label">Certifications</div>
                 </div>
-
-                <div class="team-card">
-                    <div class="team-avatar">
-                        <i data-lucide="bar-chart-3" style="width: 48px; height: 48px;"></i>
-                    </div>
-                    <h3>Chief Operating Officer</h3>
-                    <p class="team-title">COO</p>
-                    <p class="team-bio">Operations leader ensuring excellence in AI-accelerated project delivery and client satisfaction across all SAP engagements and implementations.</p>
-                    <div class="team-social">
-                        <a href="#"><i data-lucide="linkedin" style="width: 20px; height: 20px;"></i></a>
-                    </div>
+                <div class="compact-stat">
+                    <div class="compact-stat-number">15+</div>
+                    <div class="compact-stat-label">Avg. Years Experience</div>
                 </div>
+                <div class="compact-stat">
+                    <div class="compact-stat-number">12</div>
+                    <div class="compact-stat-label">Industry Verticals</div>
+                </div>
+            </div>
+            <div class="heat-legend">
+                <div class="heat-legend-item"><span class="heat-legend-dot l5"></span> Trending</div>
+                <div class="heat-legend-item"><span class="heat-legend-dot l4"></span> High Demand</div>
+                <div class="heat-legend-item"><span class="heat-legend-dot l3"></span> Growing</div>
+                <div class="heat-legend-item"><span class="heat-legend-dot l2"></span> Steady</div>
+                <div class="heat-legend-item"><span class="heat-legend-dot l1"></span> Established</div>
+            </div>
+            <div class="compact-certs">
+                <span class="compact-cert heat-5">SAP S/4HANA Cloud</span>
+                <span class="compact-cert heat-5">RISE with SAP</span>
+                <span class="compact-cert heat-5">SAP Joule AI</span>
+                <span class="compact-cert heat-5">SAP AI Core</span>
+                <span class="compact-cert heat-5">SAP Business Technology Platform</span>
+                <span class="compact-cert heat-4">SAP Datasphere</span>
+                <span class="compact-cert heat-4">GROW with SAP</span>
+                <span class="compact-cert heat-4">SAP SuccessFactors</span>
+                <span class="compact-cert heat-4">SAP Analytics Cloud</span>
+                <span class="compact-cert heat-4">SAP Integration Suite</span>
+                <span class="compact-cert heat-4">SAP Build</span>
+                <span class="compact-cert heat-3">SAP S/4HANA Private Edition</span>
+                <span class="compact-cert heat-3">SAP Integrated Business Planning</span>
+                <span class="compact-cert heat-3">SAP Signavio</span>
+                <span class="compact-cert heat-3">SAP Ariba</span>
+                <span class="compact-cert heat-3">SAP Cloud Application Programming</span>
+                <span class="compact-cert heat-3">ABAP Cloud</span>
+                <span class="compact-cert heat-2">SAP Extended Warehouse Management</span>
+                <span class="compact-cert heat-2">SAP Transportation Management</span>
+                <span class="compact-cert heat-2">SAP Fiori</span>
+                <span class="compact-cert heat-2">SAP Human Capital Management</span>
+                <span class="compact-cert heat-1">SAP Financial Accounting</span>
+                <span class="compact-cert heat-1">SAP Controlling</span>
+                <span class="compact-cert heat-1">SAP Materials Management</span>
+                <span class="compact-cert heat-1">SAP Sales & Distribution</span>
+                <span class="compact-cert heat-1">SAP Production Planning</span>
+                <span class="compact-cert heat-1">SAP Quality Management</span>
             </div>
         </div>
     </section>
 
-    <!-- Practice Leads -->
-    <section class="practice-leads">
+    <!-- Practice Areas - Enhanced -->
+    <section class="practice-compact">
         <div class="container">
-            <h2 class="section-title">Practice Leads</h2>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-avatar">
-                        <i data-lucide="database" style="width: 48px; height: 48px;"></i>
+            <h3 class="section-title">Practice Areas</h3>
+            <p class="practice-subtitle">Specialized teams delivering excellence across the SAP ecosystem</p>
+            <div class="practice-grid">
+                <div class="practice-card practice-ai">
+                    <div class="practice-icon">
+                        <i data-lucide="sparkles" style="width: 24px; height: 24px;"></i>
                     </div>
-                    <h3>SAP S/4HANA Practice Lead</h3>
-                    <p class="team-title">Principal Consultant</p>
-                    <p class="team-bio">Certified SAP S/4HANA expert leading UJ-AI™ development with 15+ successful migration projects across various industries.</p>
+                    <h4>AI & Intelligent Enterprise</h4>
+                    <p>Joule, AI Core, Machine Learning</p>
                 </div>
-
-                <div class="team-card">
-                    <div class="team-avatar">
-                        <i data-lucide="users-2" style="width: 48px; height: 48px;"></i>
+                <div class="practice-card practice-cloud">
+                    <div class="practice-icon">
+                        <i data-lucide="cloud" style="width: 24px; height: 24px;"></i>
                     </div>
-                    <h3>SuccessFactors Practice Lead</h3>
-                    <p class="team-title">HR Transformation Expert</p>
-                    <p class="team-bio">Specializing in SAP SuccessFactors implementations and AI-powered HR digital transformation initiatives.</p>
+                    <h4>Cloud & Platform</h4>
+                    <p>BTP, RISE, GROW, Integration Suite</p>
                 </div>
-
-                <div class="team-card">
-                    <div class="team-avatar">
-                        <i data-lucide="brain" style="width: 48px; height: 48px;"></i>
+                <div class="practice-card practice-core">
+                    <div class="practice-icon">
+                        <i data-lucide="database" style="width: 24px; height: 24px;"></i>
                     </div>
-                    <h3>AI/ML Practice Lead</h3>
-                    <p class="team-title">AI Engineering Expert</p>
-                    <p class="team-bio">Leading development of NXSYS's 5 proprietary AI platforms including Discovery Engine™, RAG Knowledge Hub™, and PM-AI™.</p>
+                    <h4>S/4HANA Transformation</h4>
+                    <p>Migrations, Greenfield, Brownfield</p>
                 </div>
-
-                <div class="team-card">
-                    <div class="team-avatar">
-                        <i data-lucide="trending-up" style="width: 48px; height: 48px;"></i>
+                <div class="practice-card practice-data">
+                    <div class="practice-icon">
+                        <i data-lucide="bar-chart-3" style="width: 24px; height: 24px;"></i>
                     </div>
-                    <h3>Analytics & BI Practice Lead</h3>
-                    <p class="team-title">Data & Analytics Expert</p>
-                    <p class="team-bio">Expert in SAP Analytics Cloud, BW/4HANA, and AI-powered advanced analytics solutions.</p>
+                    <h4>Data & Analytics</h4>
+                    <p>Datasphere, Analytics Cloud, BW/4HANA</p>
                 </div>
-
-                <div class="team-card">
-                    <div class="team-avatar">
-                        <i data-lucide="cloud" style="width: 48px; height: 48px;"></i>
+                <div class="practice-card practice-finance">
+                    <div class="practice-icon">
+                        <i data-lucide="landmark" style="width: 24px; height: 24px;"></i>
                     </div>
-                    <h3>Cloud Solutions Practice Lead</h3>
-                    <p class="team-title">Cloud Architect</p>
-                    <p class="team-bio">Specializing in SAP cloud migrations, BTP, hybrid cloud architectures, and SaaS platform development.</p>
+                    <h4>Finance & Controlling</h4>
+                    <p>Central Finance, Group Reporting</p>
                 </div>
-
-                <div class="team-card">
-                    <div class="team-avatar">
-                        <i data-lucide="truck" style="width: 48px; height: 48px;"></i>
+                <div class="practice-card practice-scm">
+                    <div class="practice-icon">
+                        <i data-lucide="truck" style="width: 24px; height: 24px;"></i>
                     </div>
-                    <h3>Supply Chain Practice Lead</h3>
-                    <p class="team-title">SCM Expert</p>
-                    <p class="team-bio">Leading AI Predictive Supply Chain Engine™ development with deep expertise in SAP SCM, MM, and demand forecasting.</p>
+                    <h4>Supply Chain</h4>
+                    <p>IBP, TM, EWM, Digital Manufacturing</p>
+                </div>
+                <div class="practice-card practice-hr">
+                    <div class="practice-icon">
+                        <i data-lucide="users" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h4>Human Experience</h4>
+                    <p>SuccessFactors, Payroll, Workforce</p>
+                </div>
+                <div class="practice-card practice-integration">
+                    <div class="practice-icon">
+                        <i data-lucide="git-merge" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h4>Integration & Extension</h4>
+                    <p>CAP, Fiori, ABAP Cloud, APIs</p>
+                </div>
+                <div class="practice-card practice-training">
+                    <div class="practice-icon">
+                        <i data-lucide="graduation-cap" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h4>Training & Enablement</h4>
+                    <p>End-User, Admin, Technical Training</p>
+                </div>
+                <div class="practice-card practice-adoption">
+                    <div class="practice-icon">
+                        <i data-lucide="rocket" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <h4>AI Adoption & Change</h4>
+                    <p>Strategy, Readiness, Transformation</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Team Stats -->
-    <section class="team-stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">SAP Certified Consultants</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">200+</div>
-                    <div class="stat-label">SAP Certifications</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Years Average Experience</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">12</div>
-                    <div class="stat-label">Industry Verticals</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications -->
-    <section class="certifications">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Certifications</h2>
-                <p>200+ certifications across all major SAP modules and AI/ML technologies</p>
-            </div>
-            <div class="cert-grid">
-                <div class="cert-item">
-                    <div class="cert-icon-badge">
-                        <i data-lucide="award" style="width: 28px; height: 28px;"></i>
-                    </div>
-                    SAP S/4HANA
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon-badge">
-                        <i data-lucide="award" style="width: 28px; height: 28px;"></i>
-                    </div>
-                    SAP SuccessFactors
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon-badge">
-                        <i data-lucide="award" style="width: 28px; height: 28px;"></i>
-                    </div>
-                    SAP Analytics Cloud
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon-badge">
-                        <i data-lucide="award" style="width: 28px; height: 28px;"></i>
-                    </div>
-                    SAP Fiori/UI5
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon-badge">
-                        <i data-lucide="award" style="width: 28px; height: 28px;"></i>
-                    </div>
-                    SAP BTP
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon-badge">
-                        <i data-lucide="award" style="width: 28px; height: 28px;"></i>
-                    </div>
-                    SAP HANA
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon-badge">
-                        <i data-lucide="award" style="width: 28px; height: 28px;"></i>
-                    </div>
-                    SAP FI/CO/MM/SD
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon-badge">
-                        <i data-lucide="award" style="width: 28px; height: 28px;"></i>
-                    </div>
-                    SAP PP/QM/PM
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Join Our Team -->
+    <!-- Join Our Team - Compact -->
     <section class="join-team">
         <div class="container">
             <div class="join-content">
-                <h2>Join Our AI-First Team</h2>
-                <p>We're looking for talented SAP professionals and AI engineers to join our growing team and help build the future of SAP consulting</p>
-                <a href="contact.html" class="btn btn-primary" style="background: linear-gradient(135deg, var(--primary-color), #ff4d6d); padding: 20px 48px; border-radius: 50px; font-size: 1.125rem;">
-                    <i data-lucide="mail" style="width: 20px; height: 20px; display: inline-block; vertical-align: middle; margin-right: 8px;"></i>
-                    View Career Opportunities
+                <h2>Join Our Team</h2>
+                <p>We're looking for talented SAP professionals and AI engineers</p>
+                <a href="contact.html" class="btn btn-primary" style="background: linear-gradient(135deg, var(--primary-color), #ff4d6d); padding: 16px 36px; border-radius: 50px; font-size: 1rem;">
+                    View Opportunities
                 </a>
             </div>
         </div>
