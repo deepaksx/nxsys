@@ -1280,3 +1280,137 @@ html {
 .icon-quality::before { content: '✓'; }
 .icon-delivery::before { content: '📦'; }
 .icon-support-247::before { content: '⏰'; }
+
+/* What We Do Enhanced Styles */
+.what-we-do {
+    background-color: var(--bg-lighter);
+}
+
+.services-grid-3col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+@media (max-width: 1024px) {
+    .services-grid-3col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .services-grid-3col {
+        grid-template-columns: 1fr;
+    }
+}
+
+.service-item-enhanced {
+    background-color: var(--white);
+    padding: 32px 28px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-item-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: var(--transition);
+}
+
+.service-item-enhanced:hover::before {
+    transform: scaleX(1);
+}
+
+.service-item-enhanced:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.service-icon-wrapper {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(200, 16, 46, 0.25);
+    transition: var(--transition);
+}
+
+.service-item-enhanced:hover .service-icon-wrapper {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(200, 16, 46, 0.35);
+}
+
+.service-icon-lucide {
+    width: 28px;
+    height: 28px;
+    color: var(--white);
+    stroke-width: 2;
+}
+
+.service-item-enhanced h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--secondary-color);
+}
+
+.service-item-enhanced p {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--text-medium);
+    margin: 0;
+}
+
+/* Why NXSYS Section */
+.why-nxsys {
+    background-color: var(--white);
+}
+
+.why-nxsys .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.why-nxsys .why-item {
+    background-color: var(--bg-lighter);
+    padding: 32px;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.why-nxsys .why-item:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow);
+    background-color: var(--white);
+}
+
+.why-nxsys .why-item h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--secondary-color);
+}
+
+.why-nxsys .why-item p {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--text-medium);
+    margin: 0;
+}
