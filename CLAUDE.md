@@ -31,7 +31,7 @@ There are ~30 top-level pages (`index.html`, `services-*.html`, `solutions-*.htm
 - `styles-new.css` is the **active** global stylesheet, linked by every page. Brand colors live in its `:root` CSS variables: `--primary-color: #C8102E` (crimson red), `--secondary-color: #1a1a1a` (black) — always use the variables, never hardcode.
 - `script.js` is loaded by every page (nav/interactivity/animations).
 - Icons come from Lucide via CDN (`unpkg.com/lucide@latest`); pages call `lucide.createIcons()`.
-- `parallax-engine.js` + `parallax-effects.css` are used only by the parallax pages (`index.html`, `ai-innovation.html`, `ai-partner.html`); `ai-styles.css` only by the two `ai-*` pages.
+- `parallax-effects.css` is used by `index.html`, `ai-innovation.html` and `ai-partner.html`; `parallax-engine.js` only by `index.html` and `ai-innovation.html`. `ai-styles.css` is used only by the two `ai-*` pages.
 - Pages also carry substantial page-specific CSS in inline `<style>` blocks in their `<head>`.
 
 ### Legacy/dead files — do not extend these
@@ -40,4 +40,9 @@ There are ~30 top-level pages (`index.html`, `services-*.html`, `solutions-*.htm
 
 ### Contact forms
 
-Forms post to **Formspree** (no backend) — e.g. `ai-partner.html` uses `https://formspree.io/f/xeoqdkjl`. Setup details in `FORMSPREE-SETUP-GUIDE.md`.
+Forms post to **Formspree** (no backend). `ai-partner.html` uses the live endpoint `https://formspree.io/f/xeoqdkjl`; `contact.html` still has the placeholder `https://formspree.io/f/YOUR_FORM_ID`, so the main contact form does not deliver submissions until it's replaced. Setup details in `FORMSPREE-SETUP-GUIDE.md`.
+
+### Content sources
+
+- `Partners.md` holds the partner bios (formerly used on the now-removed leadership page `about-team.html`).
+- `SEO-OPTIMIZATION-GUIDE.md` is the SEO plan; per its checklist there is no sitemap.xml or robots.txt yet, and pages have no Open Graph tags.
