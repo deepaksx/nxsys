@@ -11,14 +11,18 @@ The NXSYS corporate website (SAP consulting firm, UAE) — a pure static multi-p
 - Preview locally by opening any `.html` file directly, or serve the folder: `python -m http.server 8000`
 - There is no lint/build/test tooling.
 
-## Deployment
+## Deployment — TWO PHRASES, NOTHING ELSE
 
-Deployed on **AWS Amplify Hosting** (app `d1fir3ywz6obz5`, region `ap-south-1`, in the personal AWS account — profile `personal`, account 329643601284, NOT the default profile). Live at https://www.nxsys.com.
+Hosted on **AWS Amplify Hosting** (app `d1fir3ywz6obz5`, region `ap-south-1`, personal AWS account 329643601284, profile `personal` — NOT the default profile). Live at https://www.nxsys.com. Monitor view: Nexora → Admin area → Websites.
 
-- Every push to `main` on `github.com/deepaksx/nxsys` auto-deploys — pushing to main IS deploying to production.
-- Amplify has a catch-all rewrite `/<*>` → `/index.html` (404-200), so broken links render the homepage instead of a 404.
-- `render.yaml` and the README's Render/deployment instructions are legacy from the previous Render hosting; ignore them.
-- The AWS CLI on this machine has an empty `AWS_REGION` env var that breaks it — always pass `--profile personal --region ap-south-1` explicitly.
+There are exactly two branches and the owner only ever says two things:
+
+1. **"Put it on test"** (or any request to change the site): make the change on branch `staging`, commit, `git push origin staging`. This updates ONLY the password-protected test copy (https://staging.d1fir3ywz6obz5.amplifyapp.com, login shown in Nexora → Websites → Test copy). It never touches the live site. Do this by default for every change.
+2. **"Publish"** (or "go live"): merge `staging` into `main` (fast-forward) and `git push origin main`. This IS the production deploy. **Never push to `main` unless the owner has just said "publish" in this conversation.** After pushing, confirm the live site and that Nexora shows "live = GitHub main".
+
+Rules: never commit directly to `main`; never push `main` for any other reason; to undo a publish, revert the commit on `main` and push (only when asked). The "Rebuild" button in Nexora only retries the build of what is already on `main` — it does not publish test changes.
+
+AWS CLI: the machine has an empty `AWS_REGION` env var that breaks it — always pass `--profile personal --region ap-south-1`. Amplify has a catch-all rewrite `/<*>` → `/index.html` (404-200), so broken links render the homepage. `render.yaml` and the README's Render instructions are legacy; ignore them.
 
 ## Architecture
 
